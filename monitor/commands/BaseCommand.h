@@ -6,6 +6,7 @@
 #include <map>
 #include <ostream>
 #include <memory>
+#include <algorithm>
 
 #include "Parser.h"
 
