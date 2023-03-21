@@ -1,0 +1,13 @@
++ craete to-do file
++ monitor do
++ parse command in basecommand
++ parser wrong throws something
++ moditor do exit help
++ parser doenst know its invalid
++ cmake dont include dirs that monitor includes
++ enable input in "\""
++ do help file more pretty
+- prompt message choose message what will be shown? default " monitor :"
+do tests for each commands
+do command classes
+
