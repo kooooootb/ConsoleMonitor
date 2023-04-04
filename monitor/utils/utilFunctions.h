@@ -1,6 +1,8 @@
 #ifndef MAIN_UTILFUNCTIONS_H
 #define MAIN_UTILFUNCTIONS_H
 
+#include "Parser.h"
+
 /**
  * Название файла с сообщениями помощи
  */
@@ -25,5 +27,19 @@ std::ostream &showHelp(std::ostream &ostream, int index);
  * @param text строка
  */
 void toLower(std::string &text);
+std::string toLower(std::string &&text);
+
+template<class ...Values>
+void findAndSetBoolArg(const posArgs_t &args, bool &boolVar, Values... values){
+    if(std::find_if(std::begin(args), std::end(args), [&values...](const std::string &argGiven) -> bool {
+        return std::any_of(std::begin({values...}), std::end({values...}), [&argGiven](const std::string &argNeeded) -> bool {
+            return argGiven == argNeeded;
+        });
+    }) != std::end(args)){
+        boolVar = true;
+    } else{
+        boolVar = false;
+    }
+}
 
 #endif //MAIN_UTILFUNCTIONS_H
