@@ -162,4 +162,9 @@ namespace{
 
         EXPECT_THROW(ParserTest::parseWordTest(query, index), ParserException);
     }
+
+    TEST(parseKey, single_dash){
+        std::string query = "full -e";
+        EXPECT_NO_THROW(Parser(std::ref(query)));
+    }
 }

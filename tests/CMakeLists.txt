@@ -13,7 +13,7 @@ FetchContent_MakeAvailable(googletest)
 # enable tests itself
 enable_testing()
 # configure executable
-add_executable(monitorTests utilityTest.cpp parserTest.cpp baseCommandTest.cpp)
+add_executable(monitorTests utilityTest.cpp parserTest.cpp commandFactoryTest.cpp)
 # link with gtest lib
 target_link_libraries(monitorTests GTest::gtest_main)
 # dunno

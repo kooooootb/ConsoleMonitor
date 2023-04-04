@@ -1,0 +1,13 @@
+#include <gtest/gtest.h>
+
+#include "CommandFactory.h"
+#include "Init.h"
+#include "Full.h"
+
+namespace{
+    TEST(parseCommand, inittype){
+        std::ostream &ostream = std::cout;
+        std::string query = "init";
+        EXPECT_EQ(CommandFactory::getCommand(query, std::ref(ostream))->getCommandType(), CommandFactory::CommandsList::INIT);
+    }
+}
