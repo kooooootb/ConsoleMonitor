@@ -11,12 +11,26 @@ using boolArgs_t = std::vector<std::string>;
 
 class Parser{
 private:
+    std::string command;
     posArgs_t posArgs;
     keyArgs_t keyArgs;
 
+    /**
+     * Обрабатывает строку с аргументами
+     * @param input
+     */
     void parseInput(const std::string &input);
-
-protected:
+    /**
+     * Обрабатывает строку с аргументами
+     * @param input
+     */
+    void parseCommand(std::string input);
+    /**
+     * Обрабатывает строку с аргументами
+     * @param input
+     */
+    void parseArguments(std::string input);
+protected: // TODO
     /**
      * Функция выделяет слово начинающееся с данного индекса в данной строке
      * @param input данная строка
@@ -40,12 +54,18 @@ protected:
      */
     static keyArgs_t::mapped_type parseKeyValue(const std::string &input, size_t &index);
 public:
+    /**
+     * Конструктор обрабатывает введенную строку и получает из нее команду и массив аргументов
+     * @param input
+     */
     explicit Parser(const std::string &input);
 
     const keyArgs_t &getKeyArgs() const { return keyArgs; }
     keyArgs_t &getKeyArgs() { return keyArgs; }
     const posArgs_t &getPosArgs() const { return posArgs; }
     posArgs_t &getPosArgs() { return posArgs; }
+    const std::string &getCommand() const { return command; }
+    std::string &getCommand() { return command; }
 };
 
 #endif //MONITOR_PARSER_H

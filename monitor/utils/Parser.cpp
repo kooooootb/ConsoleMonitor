@@ -10,7 +10,26 @@ Parser::Parser(const std::string &query){
 
 }
 
-void Parser::parseInput(const std::string &input) {
+void Parser::parseInput(const std::string &input){
+    int index = 0;
+    while(index < input.size() && isWhitespace(input[index])){
+        index += 1;
+    }
+
+    int divideIndex = index;
+    while(divideIndex < input.size() && !isWhitespace(input[divideIndex])){
+        divideIndex += 1;
+    }
+
+    parseCommand(toLower(input.substr(index, divideIndex)));
+    parseArguments(toLower(input.substr(divideIndex, input.size())));
+}
+
+void Parser::parseCommand(std::string input){
+    command = std::move(input);
+}
+
+void Parser::parseArguments(std::string input) {
     size_t index = 0;
     bool gotKey = false;
     std::string key;
@@ -20,7 +39,7 @@ void Parser::parseInput(const std::string &input) {
             index += 1;
         } else if (gotKey) {
             if (input[index] == '-') { // key is bool arg
-                keyArgs[key] = 1;
+                posArgs.push_back(key);
             } else { // got value for a key
                 int value = parseKeyValue(input, index);
                 keyArgs[key] = value;
@@ -35,7 +54,7 @@ void Parser::parseInput(const std::string &input) {
     }
 
     if(gotKey){ // postprocess boolean value
-        keyArgs[key] = 1;
+        posArgs.push_back(key);
     }
 }
 
