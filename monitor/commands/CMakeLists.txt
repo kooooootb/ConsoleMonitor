@@ -1,7 +1,7 @@
 project(commands)
 
 # make library
-add_library(commands STATIC BaseCommand.cpp Init.cpp)
+add_library(commands STATIC CommandHelp.cpp CommandFactory.cpp BaseCommand.cpp Init.cpp Full.cpp Blackhole.cpp)
 
 # make utils visible in cpp
 include_directories("${Monitor_root}/utils")

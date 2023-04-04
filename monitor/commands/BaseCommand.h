@@ -9,26 +9,17 @@
 #include <algorithm>
 
 #include "Parser.h"
+#include "CommandList.h"
 
 /**
  * Класс образует базу для дальнейших классов-команд, хранит общие методы обработки введенной строки
  */
 class BaseCommand {
-public:
-    enum class Commands{
-        INIT = 0, FULL, BLACKHOLE, ENTER, COPYPASTE, MOVEFILE, DELETE, SQUEZZE, COMMANDSAMOUNT
-    };
 private:
     /**
-     * Тип команды, используется для вывода помощи
+     * Тип данной команды из перенумерования
      */
-    const Commands commandType;
-
-    /**
-     * Выводит в сохраненный поток вывода информацию о команде (результат loadHelp)
-     * @return Сохраненный поток вывода
-     */
-    std::ostream &help();
+    CommandsList commandType;
 protected:
     /**
      * Поток для вывода сообщений
@@ -52,30 +43,21 @@ protected:
      * @param info дополнительное сообщение
      */
     void printAssemblyError(const char *info);
+    /**
+     * Выводит в сохраненный поток вывода информацию о команде
+     * @return Сохраненный поток вывода
+     */
+    std::ostream &help();
 public:
-    explicit BaseCommand(Commands commandType_, std::ostream &ostream_);
+    explicit BaseCommand(CommandsList commandType_, std::ostream &ostream_);
 
     virtual ~BaseCommand() = default;
 
     /**
-     * Возвращает тип команды
-     * @return элемент перечисляемого типа
-     */
-    Commands getCommand() const;
-    /**
      * Метод обрабатывает, устанавливает аргументы команды из строки запроса и исполняет команду
-     * @param query строка запроса
-     * @param keyAmount количество ключевых аргументов в команде
+     * @param parser объект парсера обработавший запрос
      */
-    void processQuery(const std::string &query);
-
-    /**
-     * Фабричный метод создает объект команды из строки запроса
-     * @param commandQuery строка запроса, целиком состоящая из символов команды
-     * @param ostream поток вывода для создания объекта команды
-     * @return указатель на объект команды
-     */
-    static std::shared_ptr<BaseCommand> parseCommand(std::string &commandQuery, std::ostream &ostream);
+    void processQuery(Parser &parser);
 };
 
 #endif //MONITOR_BASECOMMAND_H

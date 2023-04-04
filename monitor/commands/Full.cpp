@@ -1,7 +1,7 @@
 #include "Full.h"
 #include "utilFunctions.h"
 
-Full::Full(std::ostream &ostream_) : BaseCommand(CommandFactory::CommandsList::FULL, ostream_) {}
+Full::Full(std::ostream &ostream_) : BaseCommand(CommandsList::FULL, ostream_) {}
 
 bool Full::checkAndAssemble(Parser &parser) {
     if(!checkAmount(parser)) return false;

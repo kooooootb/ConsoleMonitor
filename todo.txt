@@ -8,6 +8,9 @@
 + enable input in "\""
 + do help file more pretty
 - prompt message choose message what will be shown? default " monitor :"
-do tests for each commands
++ do tests for each commands
 do command classes
++ do command factory
++ parser to parse whole line
+do all values strings
 

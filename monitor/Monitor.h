@@ -4,7 +4,7 @@
 #include <iostream>
 #include <memory>
 
-#include "CommandHeaders.h"
+#include "CommandFactory.h"
 
 /**
  * Класс реализует монитор, принимает строки запросов из входного потока, передает выходную информацию в выходной поток
@@ -22,13 +22,6 @@ private:
      * Выходной поток
      */
     std::ostream &ostream = std::cout;
-
-    /**
-     * Метод делит строку запроса на строку с командой и строку с аргументами
-     * @param query строка запроса
-     * @return пару { команда, строка с аргументами }
-     */
-    static std::pair<std::string, std::string> divideQuery(const std::string &query);
 
     /**
      * Выводимое предложение ввода

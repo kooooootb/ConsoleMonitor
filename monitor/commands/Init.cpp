@@ -1,6 +1,6 @@
 #include "Init.h"
 
-Init::Init(std::ostream &ostream_) : BaseCommand(Commands::INIT, ostream_) {}
+Init::Init(std::ostream &ostream_) : BaseCommand(CommandsList::INIT, ostream_) {}
 
 bool Init::checkAndAssemble(Parser &parser) {
     if(!checkAmount(parser)) return false;
@@ -15,6 +15,10 @@ bool Init::checkAndAssemble(Parser &parser) {
 bool Init::checkAmount(const Parser &parser) {
     if(parser.getKeyArgs().size() != 2){
         printAssemblyError("invalid key values amount");
+        return false;
+    }
+    if(parser.getPosArgs().size() > 1){
+        printAssemblyError("invalid positional values amount");
         return false;
     }
 
