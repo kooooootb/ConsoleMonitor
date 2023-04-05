@@ -6,7 +6,7 @@
 #include <string>
 
 using posArgs_t = std::vector<std::string>;
-using keyArgs_t = std::map<std::string, int>;
+using keyArgs_t = std::map<std::string, std::string>;
 using boolArgs_t = std::vector<std::string>;
 
 class Parser{

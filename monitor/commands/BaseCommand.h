@@ -29,9 +29,9 @@ protected:
     /**
      * Метод проверяет аргументы из объекта парсера и собирает их в соответствующие команде переменные
      * @param parser объект парсера, содержащий массивы полученных аргументов
-     * @return false если входные данные неверные, true otherwise
+     * @return сообщение об ошибке (при ошибке)
      */
-    virtual bool checkAndAssemble(Parser &parser) = 0;
+    virtual const char *checkAndAssemble(Parser &parser) = 0;
 
     /**
      * Метод запускает соответствующую команде функцию ФС
@@ -56,8 +56,15 @@ public:
     /**
      * Метод обрабатывает, устанавливает аргументы команды из строки запроса и исполняет команду
      * @param parser объект парсера обработавший запрос
+     * @return сообщение об ошибке (при ошибке)
      */
-    void processQuery(Parser &parser);
+    const char *processQuery(Parser &parser);
+
+    /**
+     * Возвращает тип команды
+     * @return тип команды
+     */
+    CommandsList getCommandType() const;
 };
 
 #endif //MONITOR_BASECOMMAND_H

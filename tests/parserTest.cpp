@@ -69,53 +69,54 @@ namespace{
         size_t index = 7;
         std::string query = "--init 1";
 
-        int value = ParserTest::parseKeyValueTest(query, index);
-        EXPECT_EQ(value, 1);
+        auto value = ParserTest::parseKeyValueTest(query, index);
+        EXPECT_EQ(value, "1");
     }
 
     TEST(parseKeyValue, correct2){
         size_t index = 7;
         std::string query = "--init 10 ";
 
-        int value = ParserTest::parseKeyValueTest(query, index);
-        EXPECT_EQ(value, 10);
+        auto value = ParserTest::parseKeyValueTest(query, index);
+        EXPECT_EQ(value, "10");
     }
 
     TEST(parseKeyValue, correct3){
         size_t index = 7;
         std::string query = "--init 0123456789 -b ";
 
-        int value = ParserTest::parseKeyValueTest(query, index);
-        EXPECT_EQ(value, 123456789);
+        auto value = ParserTest::parseKeyValueTest(query, index);
+        EXPECT_EQ(value, "0123456789");
     }
 
-    TEST(parseKeyValue, throwing_outofrange1){
-        size_t index = 7;
-        std::string query = "--init 0123456789123456789 -b ";
-
-        EXPECT_THROW(ParserTest::parseKeyValueTest(query, index), ParserException);
-    }
-
-    TEST(parseKeyValue, throwing_outofrange2){
-        size_t index = 7;
-        std::string query = "--init 0009999999999 -b ";
-
-        EXPECT_THROW(ParserTest::parseKeyValueTest(query, index), ParserException);
-    }
-
-    TEST(parseKeyValue, throwing_invalidvalue1){
-        size_t index = 7;
-        std::string query = "--init invalid -b ";
-
-        EXPECT_THROW(ParserTest::parseKeyValueTest(query, index), ParserException);
-    }
-
-    TEST(parseKeyValue, throwing_invalidvalue2){
-        size_t index = 7;
-        std::string query = "--init -invalid -b ";
-
-        EXPECT_THROW(ParserTest::parseKeyValueTest(query, index), ParserException);
-    }
+    // deprecated
+//    TEST(parseKeyValue, throwing_outofrange1){
+//        size_t index = 7;
+//        std::string query = "--init 0123456789123456789 -b ";
+//
+//        EXPECT_THROW(ParserTest::parseKeyValueTest(query, index), ParserException);
+//    }
+//
+//    TEST(parseKeyValue, throwing_outofrange2){
+//        size_t index = 7;
+//        std::string query = "--init 0009999999999 -b ";
+//
+//        EXPECT_THROW(ParserTest::parseKeyValueTest(query, index), ParserException);
+//    }
+//
+//    TEST(parseKeyValue, throwing_invalidvalue1){
+//        size_t index = 7;
+//        std::string query = "--init invalid -b ";
+//
+//        EXPECT_THROW(ParserTest::parseKeyValueTest(query, index), ParserException);
+//    }
+//
+//    TEST(parseKeyValue, throwing_invalidvalue2){
+//        size_t index = 7;
+//        std::string query = "--init -invalid -b ";
+//
+//        EXPECT_THROW(ParserTest::parseKeyValueTest(query, index), ParserException);
+//    }
 
     TEST(parseWord, atBeginning){
         size_t index = 0;

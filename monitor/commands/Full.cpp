@@ -3,23 +3,24 @@
 
 Full::Full(std::ostream &ostream_) : BaseCommand(CommandsList::FULL, ostream_) {}
 
-bool Full::checkAndAssemble(Parser &parser) {
-    if(!checkAmount(parser)) return false;
+const char *Full::checkAndAssemble(Parser &parser) {
+    const char *errorMessage;
+
+    if((errorMessage = checkAmount(parser)) != nullptr) return errorMessage;
 
     setEmpty(parser.getPosArgs());
     setHeader(parser.getPosArgs());
     setHeaderonly(parser.getPosArgs());
 
-    return true;
+    return errorMessage;
 }
 
-bool Full::checkAmount(const Parser &parser) {
+const char *Full::checkAmount(const Parser &parser) {
     if(parser.getPosArgs().size() > 3){
-        printAssemblyError("invalid boolean values amount");
-        return false;
+        return "invalid boolean values amount";
     }
 
-    return true;
+    return nullptr;
 }
 
 void Full::setEmpty(const posArgs_t &bools) {

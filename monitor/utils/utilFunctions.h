@@ -29,6 +29,13 @@ std::ostream &showHelp(std::ostream &ostream, int index);
 void toLower(std::string &text);
 std::string toLower(std::string &&text);
 
+/**
+ * Находит и устанавливает переменные лоигческого типа из переданного отображения в переданную ссылку переменной
+ * @tparam Values переменной длины массив строковых значений ключей
+ * @param args массив ключей
+ * @param boolVar переменная для установки в нее логического значения
+ * @param values строки для поиска ключей
+ */
 template<class ...Values>
 void findAndSetBoolArg(const posArgs_t &args, bool &boolVar, Values... values){
     if(std::find_if(std::begin(args), std::end(args), [&values...](const std::string &argGiven) -> bool {
@@ -41,5 +48,20 @@ void findAndSetBoolArg(const posArgs_t &args, bool &boolVar, Values... values){
         boolVar = false;
     }
 }
+
+template<class Num_t>
+bool convertToNumber(const std::string &strValue, Num_t& numberVar){
+    try {
+        numberVar = std::stoi(strValue);
+    } catch (std::out_of_range const &ex) {
+        return true;
+    } catch (std::invalid_argument const &ex) {
+        return true;
+    }
+
+    return false;
+}
+
+bool isASCII(const std::string &str);
 
 #endif //MAIN_UTILFUNCTIONS_H

@@ -34,7 +34,8 @@ bool Monitor::processInput() {
                 printError("Command " + commandString + " doesn't exist");
                 help();
             } else { // run command
-                command->processQuery(*parser);
+                const char *errorMessage = command->processQuery(*parser);
+                if(errorMessage != nullptr) ostream << errorMessage << std::endl;
             }
         }
 

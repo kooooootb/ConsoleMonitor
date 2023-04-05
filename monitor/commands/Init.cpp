@@ -1,71 +1,70 @@
 #include "Init.h"
+#include "utilFunctions.h"
 
 Init::Init(std::ostream &ostream_) : BaseCommand(CommandsList::INIT, ostream_) {}
 
-bool Init::checkAndAssemble(Parser &parser) {
-    if(!checkAmount(parser)) return false;
+const char *Init::checkAndAssemble(Parser &parser) {
+    const char *errorMessage;
 
-    if(!setBlocks(parser.getKeyArgs())) return false;
-    if(!setSegments(parser.getKeyArgs())) return false;
-    if(!setLabel(parser.getPosArgs())) return false;
+    if((errorMessage = checkAmount(parser)) != nullptr) return errorMessage;
 
-    return true;
+    if((errorMessage = setBlocks(parser.getKeyArgs())) != nullptr) return errorMessage;
+    if((errorMessage = setSegments(parser.getKeyArgs())) != nullptr) return errorMessage;
+    if((errorMessage = setLabel(parser.getPosArgs())) != nullptr) return errorMessage;
+
+    return errorMessage;
 }
 
-bool Init::checkAmount(const Parser &parser) {
+const char *Init::checkAmount(const Parser &parser) {
     if(parser.getKeyArgs().size() != 2){
-        printAssemblyError("invalid key values amount");
-        return false;
+        return "invalid key values amount";
     }
     if(parser.getPosArgs().size() > 1){
-        printAssemblyError("invalid positional values amount");
-        return false;
+        return "invalid positional values amount";
     }
 
-    return true;
+    return nullptr;
 }
 
-bool Init::setBlocks(const keyArgs_t &keys) {
-    if(auto it = keys.find("blocks"); it != keys.end() || ((it = keys.find("b")) != keys.end())){
-        blocks = it->second;
-        if(blocks < 1 || 65535 < blocks){
-            printAssemblyError("blocks incorrect value");
-            return false;
+const char *Init::setBlocks(const keyArgs_t &keys) {
+    if(auto it = keys.find("blocks"); it != keys.end() || ((it = keys.find("b")) != keys.end())) {
+        // convert to int
+        if(convertToNumber(it->second, blocks)) return "blocks incorrect value";
+
+        // check restrictions
+        if (blocks < 1 || 65535 < blocks) {
+            return "blocks incorrect value";
         }
     } else {
-        printAssemblyError("no blocks key value");
-        return false;
+        return "no blocks key value";
     }
 
-    return true;
+    return nullptr;
 }
 
-bool Init::setSegments(const keyArgs_t &keys) {
+const char *Init::setSegments(const keyArgs_t &keys) {
     if(auto it = keys.find("segments"); it != keys.end() || ((it = keys.find("s")) != keys.end())){
-        segments = it->second;
+        // convert to int
+        if (convertToNumber(it->second, segments)) return "segments incorrect value";
+
+        // check restrictions
         if(segments < 1 || 31 < segments){
-            printAssemblyError("segments incorrect value");
-            return false;
+            return "segments incorrect value";
         }
     } else {
-        printAssemblyError("no segments key value");
-        return false;
+        return "no segments key value";
     }
 
-    return true;
+    return nullptr;
 }
 
-bool Init::setLabel(posArgs_t &poss) {
+const char *Init::setLabel(posArgs_t &poss) {
     label = poss.empty() ? DEFAULTLABEL : std::move(poss.front()); // label is optional
-    if(label.size() > 10 || std::any_of(std::begin(label), std::end(label), [](const char character) -> bool {
-        return character < 0;
-    })){
-
-        printAssemblyError("label value is incorrect");
-        return false;
+    if(label.size() > 10 || !isASCII(label)){
+        return "label value is incorrect";
     }
 
-    return true;
+    return nullptr;
 }
 
 int Init::run() {

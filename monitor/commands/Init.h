@@ -11,15 +11,15 @@ private:
 
     static constexpr char DEFAULTLABEL[] = "DEFAULT";
 
-    bool checkAmount(const Parser &parser);
+    const char *checkAmount(const Parser &parser);
 
-    bool setBlocks(const keyArgs_t &keys);
-    bool setSegments(const keyArgs_t &keys);
-    bool setLabel(posArgs_t &poss);
+    const char *setBlocks(const keyArgs_t &keys);
+    const char *setSegments(const keyArgs_t &keys);
+    const char *setLabel(posArgs_t &poss);
 public:
     explicit Init(std::ostream &ostream_);
 
-    bool checkAndAssemble(Parser &parser) final;
+    const char *checkAndAssemble(Parser &parser) final;
     int run() final;
 };
 

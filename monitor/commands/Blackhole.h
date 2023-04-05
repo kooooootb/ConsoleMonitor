@@ -7,7 +7,7 @@ class Blackhole : public BaseCommand {
 public:
     explicit Blackhole(std::ostream& ostream_);
 
-    bool checkAndAssemble(Parser &parser) final;
+    const char *checkAndAssemble(Parser &parser) final;
     int run() final;
 };
 

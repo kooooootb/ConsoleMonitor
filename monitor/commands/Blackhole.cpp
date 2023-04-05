@@ -3,8 +3,8 @@
 
 Blackhole::Blackhole(std::ostream &ostream_) : BaseCommand(CommandsList::BLACKHOLE, ostream_) {}
 
-bool Blackhole::checkAndAssemble(Parser &parser) {
-    return true;
+const char *Blackhole::checkAndAssemble(Parser &parser) {
+    return nullptr; // always correct
 }
 
 int Blackhole::run() {

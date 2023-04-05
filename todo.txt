@@ -9,8 +9,10 @@
 + do help file more pretty
 - prompt message choose message what will be shown? default " monitor :"
 + do tests for each commands
-do command classes
+do all command classes
 + do command factory
 + parser to parse whole line
-do all values strings
-
++ do all values strings
+do command setting values return const char + library of messages
+test command functionality
+do separate vector for bool values

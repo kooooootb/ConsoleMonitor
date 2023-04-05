@@ -41,8 +41,7 @@ void Parser::parseArguments(std::string input) {
             if (input[index] == '-') { // key is bool arg
                 posArgs.push_back(key);
             } else { // got value for a key
-                int value = parseKeyValue(input, index);
-                keyArgs[key] = value;
+                keyArgs[key] = parseKeyValue(input, index);
             }
             gotKey = false;
         } else if (input[index] == '-') { // if key
@@ -96,13 +95,5 @@ keyArgs_t::key_type Parser::parseKey(const std::string &input, size_t &index){
 }
 
 keyArgs_t::mapped_type Parser::parseKeyValue(const std::string &input, size_t &index){
-    std::string strValue = parseWord(input, index);
-    try{
-        keyArgs_t::mapped_type value = std::stoi(strValue);
-        return value;
-    } catch(std::out_of_range const &ex){
-        throw ParserException("wrong key value");
-    } catch(std::invalid_argument const &ex){
-        throw ParserException("wrong key value");
-    }
+    return parseWord(input, index);
 }

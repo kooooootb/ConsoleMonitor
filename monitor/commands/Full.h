@@ -9,7 +9,7 @@ private:
     bool header;
     bool headeronly;
 
-    bool checkAmount(const Parser &parser);
+    const char *checkAmount(const Parser &parser);
 
     void setEmpty(const boolArgs_t &bools);
     void setHeader(const boolArgs_t &bools);
@@ -17,7 +17,7 @@ private:
 public:
     explicit Full(std::ostream& ostream_);
 
-    bool checkAndAssemble(Parser &parser) final;
+    const char *checkAndAssemble(Parser &parser) final;
     int run() final;
 };
 

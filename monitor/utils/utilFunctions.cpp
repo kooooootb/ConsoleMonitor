@@ -72,3 +72,8 @@ std::string toLower(std::string &&text) {
     return text;
 }
 
+bool isASCII(const std::string &str){
+    return !std::any_of(std::begin(str), std::end(str), [](const char character) -> bool {
+        return character < 0;
+    });
+}
