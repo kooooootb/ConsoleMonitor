@@ -18,3 +18,4 @@ do all command classes
 test command functionality
 + do separate vector for bool values
 bool + pos values == key value
+wrap util in namespace

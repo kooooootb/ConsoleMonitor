@@ -1,9 +1,9 @@
-#include "Copy.h"
+#include "Move.h"
 #include "utilFunctions.h"
 
-Copy::Copy(std::ostream &ostream_) : BaseCommand(CommandsList::COPY, ostream_) {}
+Move::Move(std::ostream &ostream_) : BaseCommand(CommandsList::MOVE, ostream_) {}
 
-const char *Copy::checkAndAssemble(Parser &parser) {
+const char *Move::checkAndAssemble(Parser &parser) {
     const char *errorMessage;
 
     if((errorMessage = checkAmount(parser)) != nullptr) return errorMessage;
@@ -14,7 +14,7 @@ const char *Copy::checkAndAssemble(Parser &parser) {
     return errorMessage;
 }
 
-const char *Copy::checkAmount(const Parser &parser) {
+const char *Move::checkAmount(const Parser &parser) {
     if(parser.getPosArgs().size() != 2){
         return WRONGPOSSAMOUNT;
     }
@@ -22,7 +22,7 @@ const char *Copy::checkAmount(const Parser &parser) {
     return nullptr;
 }
 
-const char *Copy::setOldFile(posArgs_t &poss) {
+const char *Move::setOldFile(posArgs_t &poss) {
     oldFile = std::move(poss.back());
     poss.pop_back();
 
@@ -33,7 +33,7 @@ const char *Copy::setOldFile(posArgs_t &poss) {
     return nullptr;
 }
 
-const char *Copy::setNewFile(posArgs_t &poss) {
+const char *Move::setNewFile(posArgs_t &poss) {
     newFile = std::move(poss.back());
     poss.pop_back();
 
@@ -44,9 +44,9 @@ const char *Copy::setNewFile(posArgs_t &poss) {
     return nullptr;
 }
 
-int Copy::run() {
+int Move::run() {
     // return fs_init(blocks, segments, label);
-    ostream << "copy command executed, old file: \"" << oldFile <<
+    ostream << "move command executed, old file: \"" << oldFile <<
             "\", new file: \"" << newFile << "\"" << std::endl;
     return 0;
 }

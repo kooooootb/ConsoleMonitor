@@ -49,6 +49,13 @@ void findAndSetBoolArg(const posArgs_t &args, bool &boolVar, Values... values){
     }
 }
 
+/**
+ * Функция переводит строку в число
+ * @tparam Num_t числовой тип в который происходит конвертация
+ * @param strValue строка с числом
+ * @param numberVar ссылка на переменную принимающую значение
+ * @return true при возникновении ошибки конвертации, false otherwise
+ */
 template<class Num_t>
 bool convertToNumber(const std::string &strValue, Num_t& numberVar){
     try {
