@@ -17,7 +17,7 @@ const char *Full::checkAndAssemble(Parser &parser) {
 
 const char *Full::checkAmount(const Parser &parser) {
     if(parser.getBoolArgs().size() > 3){
-        return "invalid boolean values amount";
+        return WRONGBOOLSAMOUNT;
     }
 
     return nullptr;

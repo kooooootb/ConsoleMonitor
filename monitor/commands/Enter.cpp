@@ -16,10 +16,10 @@ const char *Enter::checkAndAssemble(Parser &parser) {
 
 const char *Enter::checkAmount(const Parser &parser) {
     if(parser.getKeyArgs().size() != 1){
-        return "invalid key values amount";
+        return WRONGKEYSAMOUNT;
     }
     if(parser.getPosArgs().size() != 1){
-        return "invalid positional values amount";
+        return WRONGPOSSAMOUNT;
     }
 
     return nullptr;
@@ -28,14 +28,14 @@ const char *Enter::checkAmount(const Parser &parser) {
 const char *Enter::setLength(const keyArgs_t &keys) {
     if(auto it = keys.find("length"); it != keys.end() || ((it = keys.find("l")) != keys.end())) {
         // convert to int
-        if(convertToNumber(it->second, length)) return "length incorrect value";
+        if(convertToNumber(it->second, length)) return LENGTHCANTCONVERT;
 
         // check restrictions
         if(length < 1 || 65535 < length){
-            return "length incorrect value";
+            return LENGTHRESTRICTED;
         }
     } else {
-        return "no blocks key value";
+        return NOLENGTHVALUE;
     }
 
     return nullptr;
@@ -43,12 +43,12 @@ const char *Enter::setLength(const keyArgs_t &keys) {
 
 const char *Enter::setFilename(posArgs_t &poss) {
     if(poss.empty()){
-        return "no file name was provided";
+        return NOFILENAMEVALUE;
     }
 
     filename = std::move(poss.back());
     if(filename.size() > 10 || !isASCII(filename)){
-        return "label value is incorrect";
+        return INCORRECTFILENAME;
     }
 
     return nullptr;

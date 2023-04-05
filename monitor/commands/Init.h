@@ -11,6 +11,16 @@ private:
 
     static constexpr char DEFAULTLABEL[] = "DEFAULT";
 
+    static constexpr char WRONGKEYSAMOUNT[] = "invalid key values amount";
+    static constexpr char WRONGPOSSAMOUNT[] = "invalid positional values amount";
+    static constexpr char BLOCKSCANTCONVERT[] = "blocks incorrect value";
+    static constexpr char BLOCKSRESTRICTED[] = "blocks incorrect value";
+    static constexpr char NOBLOCKSVALUE[] = "no blocks key value";
+    static constexpr char SEGMENTSCANTCONVERT[] = "segments incorrect value";
+    static constexpr char SEGMENTSRESTRICTED[] = "segments incorrect value";
+    static constexpr char NOSEGMENTSVALUE[] = "no segments key value";
+    static constexpr char LABELINCORRECT[] = "label value is incorrect";
+
     const char *checkAmount(const Parser &parser);
 
     const char *setBlocks(const keyArgs_t &keys);

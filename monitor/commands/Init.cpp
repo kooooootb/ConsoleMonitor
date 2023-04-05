@@ -17,10 +17,10 @@ const char *Init::checkAndAssemble(Parser &parser) {
 
 const char *Init::checkAmount(const Parser &parser) {
     if(parser.getKeyArgs().size() != 2){
-        return "invalid key values amount";
+        return WRONGKEYSAMOUNT;
     }
     if(parser.getPosArgs().size() > 1){
-        return "invalid positional values amount";
+        return WRONGPOSSAMOUNT;
     }
 
     return nullptr;
@@ -29,14 +29,14 @@ const char *Init::checkAmount(const Parser &parser) {
 const char *Init::setBlocks(const keyArgs_t &keys) {
     if(auto it = keys.find("blocks"); it != keys.end() || ((it = keys.find("b")) != keys.end())) {
         // convert to int
-        if(convertToNumber(it->second, blocks)) return "blocks incorrect value";
+        if(convertToNumber(it->second, blocks)) return BLOCKSCANTCONVERT;
 
         // check restrictions
         if (blocks < 1 || 65535 < blocks) {
-            return "blocks incorrect value";
+            return BLOCKSRESTRICTED;
         }
     } else {
-        return "no blocks key value";
+        return NOBLOCKSVALUE;
     }
 
     return nullptr;
@@ -45,14 +45,14 @@ const char *Init::setBlocks(const keyArgs_t &keys) {
 const char *Init::setSegments(const keyArgs_t &keys) {
     if(auto it = keys.find("segments"); it != keys.end() || ((it = keys.find("s")) != keys.end())){
         // convert to int
-        if (convertToNumber(it->second, segments)) return "segments incorrect value";
+        if (convertToNumber(it->second, segments)) return SEGMENTSCANTCONVERT;
 
         // check restrictions
         if(segments < 1 || 31 < segments){
-            return "segments incorrect value";
+            return SEGMENTSRESTRICTED;
         }
     } else {
-        return "no segments key value";
+        return NOSEGMENTSVALUE;
     }
 
     return nullptr;
@@ -61,7 +61,7 @@ const char *Init::setSegments(const keyArgs_t &keys) {
 const char *Init::setLabel(posArgs_t &poss) {
     label = poss.empty() ? DEFAULTLABEL : std::move(poss.front()); // label is optional
     if(label.size() > 10 || !isASCII(label)){
-        return "label value is incorrect";
+        return LABELINCORRECT;
     }
 
     return nullptr;

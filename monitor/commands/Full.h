@@ -9,6 +9,8 @@ private:
     bool header;
     bool headeronly;
 
+    static constexpr char WRONGBOOLSAMOUNT[] = "invalid boolean values amount";
+
     const char *checkAmount(const Parser &parser);
 
     void setEmpty(const boolArgs_t &bools);

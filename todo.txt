@@ -17,3 +17,4 @@ do all command classes
 library of messages
 test command functionality
 + do separate vector for bool values
+bool + pos values == key value
