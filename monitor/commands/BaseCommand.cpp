@@ -14,10 +14,10 @@ std::ostream &BaseCommand::help() {
 }
 
 const char *BaseCommand::processQuery(Parser &parser) {
-    auto poss = parser.getPosArgs();
+    auto poss = parser.getBoolArgs();
     const char *errorMessage = nullptr;
 
-    if(std::find(std::begin(poss), std::end(poss), "help") == std::begin(poss)){
+    if(std::find(std::begin(poss), std::end(poss), "help") != std::end(poss)){
         help();
     } else if((errorMessage = checkAndAssemble(parser)) == nullptr) { // parser becomes invalid here, if no error
         run();

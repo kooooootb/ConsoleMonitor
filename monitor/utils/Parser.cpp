@@ -39,7 +39,7 @@ void Parser::parseArguments(std::string input) {
             index += 1;
         } else if (gotKey) {
             if (input[index] == '-') { // key is bool arg
-                posArgs.push_back(key);
+                boolArgs.push_back(key);
             } else { // got value for a key
                 keyArgs[key] = parseKeyValue(input, index);
             }
@@ -53,7 +53,7 @@ void Parser::parseArguments(std::string input) {
     }
 
     if(gotKey){ // postprocess boolean value
-        posArgs.push_back(key);
+        boolArgs.push_back(key);
     }
 }
 

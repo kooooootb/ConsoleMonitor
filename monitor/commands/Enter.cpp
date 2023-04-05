@@ -26,8 +26,6 @@ const char *Enter::checkAmount(const Parser &parser) {
 }
 
 const char *Enter::setLength(const keyArgs_t &keys) {
-    const char *errorMessage = nullptr;
-
     if(auto it = keys.find("length"); it != keys.end() || ((it = keys.find("l")) != keys.end())) {
         // convert to int
         if(convertToNumber(it->second, length)) return "length incorrect value";

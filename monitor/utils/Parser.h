@@ -13,6 +13,7 @@ class Parser{
 private:
     std::string command;
     posArgs_t posArgs;
+    boolArgs_t boolArgs;
     keyArgs_t keyArgs;
 
     /**
@@ -64,6 +65,8 @@ public:
     keyArgs_t &getKeyArgs() { return keyArgs; }
     const posArgs_t &getPosArgs() const { return posArgs; }
     posArgs_t &getPosArgs() { return posArgs; }
+    const boolArgs_t &getBoolArgs() const { return boolArgs; }
+    boolArgs_t &getBoolArgs() { return boolArgs; }
     const std::string &getCommand() const { return command; }
     std::string &getCommand() { return command; }
 };

@@ -13,6 +13,7 @@ do all command classes
 + do command factory
 + parser to parse whole line
 + do all values strings
-do command setting values return const char + library of messages
++ do command setting values return const char
+library of messages
 test command functionality
-do separate vector for bool values
++ do separate vector for bool values
