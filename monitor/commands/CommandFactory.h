@@ -6,7 +6,7 @@
 #include "BaseCommand.h"
 #include "Init.h"
 #include "Full.h"
-#include "Blackhole.h"
+#include "Empty.h"
 #include "Enter.h"
 
 class CommandFactory {
@@ -32,7 +32,7 @@ std::shared_ptr<BaseCommand> CommandFactory::getCommand(const std::string &comma
     } else if(commandString == "full"){
         return std::make_shared<Full>(args...);
     } else if(commandString == "blackhole"){
-        return std::make_shared<Blackhole>(args...);
+        return std::make_shared<Empty>(args...);
     } else if(commandString == "enter"){
         return std::make_shared<Enter>(args...);
     } else {

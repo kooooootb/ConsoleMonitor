@@ -14,7 +14,7 @@ do all command classes
 + parser to parse whole line
 + do all values strings
 + do command setting values return const char
-library of messages
++ library of messages
 test command functionality
 + do separate vector for bool values
 bool + pos values == key value
