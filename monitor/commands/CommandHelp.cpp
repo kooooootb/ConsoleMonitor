@@ -8,5 +8,7 @@ const std::map<CommandsList, const char *> CommandHelp::messages = {
     {CommandsList::EMPTY, "blackhole help"},
     {CommandsList::ENTER, "enter help"},
     {CommandsList::COPY, "copy help"},
-    {CommandsList::MOVE, "move help"}
+    {CommandsList::MOVE, "move help"},
+    {CommandsList::DEL, "del help"},
+    {CommandsList::SQUEZZE, "squeeze help"}
 };

@@ -11,5 +11,4 @@ public:
     int run() final;
 };
 
-
 #endif //MAIN_EMPTY_H
