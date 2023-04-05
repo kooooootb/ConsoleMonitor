@@ -10,6 +10,7 @@
 #include "Enter.h"
 #include "Copy.h"
 #include "Move.h"
+#include "Del.h"
 
 class CommandFactory {
 public:
@@ -41,6 +42,8 @@ std::shared_ptr<BaseCommand> CommandFactory::getCommand(const std::string &comma
         return std::make_shared<Copy>(args...);
     } else if(commandString == "move"){
         return std::make_shared<Move>(args...);
+    } else if(commandString == "del"){
+        return std::make_shared<Del>(args...);
     } else {
         return nullptr; // can't find appropriate command
     }
