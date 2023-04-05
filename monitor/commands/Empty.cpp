@@ -1,7 +1,7 @@
 #include "Empty.h"
 #include "utilFunctions.h"
 
-Empty::Empty(std::ostream &ostream_) : BaseCommand(CommandsList::BLACKHOLE, ostream_) {}
+Empty::Empty(std::ostream &ostream_) : BaseCommand(CommandsList::EMPTY, ostream_) {}
 
 const char *Empty::checkAndAssemble(Parser &parser) {
     return nullptr; // always correct

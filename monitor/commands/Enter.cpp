@@ -42,11 +42,9 @@ const char *Enter::setLength(const keyArgs_t &keys) {
 }
 
 const char *Enter::setFilename(posArgs_t &poss) {
-    if(poss.empty()){
-        return NOFILENAMEVALUE;
-    }
-
     filename = std::move(poss.back());
+    poss.pop_back();
+
     if(filename.size() > 10 || !isASCII(filename)){
         return INCORRECTFILENAME;
     }

@@ -5,7 +5,7 @@
  * Список всех команд
  */
 enum class CommandsList{
-    INIT = 0, FULL, BLACKHOLE, ENTER, COPYPASTE, MOVEFILE, DELETE, SQUEZZE, COMMANDSAMOUNT
+    INIT = 0, FULL, EMPTY, ENTER, COPY, MOVE, DEL, SQUEZZE
 };
 
 #endif //MAIN_COMMANDLIST_H
