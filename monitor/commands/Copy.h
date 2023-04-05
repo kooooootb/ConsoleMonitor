@@ -23,5 +23,4 @@ public:
     int run() final;
 };
 
-
 #endif //MAIN_CP_H

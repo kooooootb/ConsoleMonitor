@@ -59,7 +59,9 @@ const char *Init::setSegments(const keyArgs_t &keys) {
 }
 
 const char *Init::setLabel(posArgs_t &poss) {
-    label = poss.empty() ? DEFAULTLABEL : std::move(poss.front()); // label is optional
+    label = poss.empty() ? DEFAULTLABEL : std::move(poss.back()); // label is optional
+    poss.pop_back();
+
     if(label.size() > 10 || !isASCII(label)){
         return LABELINCORRECT;
     }

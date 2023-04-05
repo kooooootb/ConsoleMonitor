@@ -8,6 +8,7 @@
 #include "Full.h"
 #include "Empty.h"
 #include "Enter.h"
+#include "Copy.h"
 
 class CommandFactory {
 public:
@@ -31,10 +32,12 @@ std::shared_ptr<BaseCommand> CommandFactory::getCommand(const std::string &comma
         return std::make_shared<Init>(args...);
     } else if(commandString == "full"){
         return std::make_shared<Full>(args...);
-    } else if(commandString == "blackhole"){
+    } else if(commandString == "empty"){
         return std::make_shared<Empty>(args...);
     } else if(commandString == "enter"){
         return std::make_shared<Enter>(args...);
+    } else if(commandString == "copy"){
+        return std::make_shared<Copy>(args...);
     } else {
         return nullptr; // can't find appropriate command
     }
