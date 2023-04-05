@@ -8,8 +8,8 @@ const char *Move::checkAndAssemble(Parser &parser) {
 
     if((errorMessage = checkAmount(parser)) != nullptr) return errorMessage;
 
-    if((errorMessage = setOldFile(parser.getPosArgs())) != nullptr) return errorMessage;
     if((errorMessage = setNewFile(parser.getPosArgs())) != nullptr) return errorMessage;
+    if((errorMessage = setOldFile(parser.getPosArgs())) != nullptr) return errorMessage;
 
     return errorMessage;
 }
