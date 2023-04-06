@@ -26,11 +26,6 @@ const char *BaseCommand::processQuery(Parser &parser) {
     return errorMessage;
 }
 
-void BaseCommand::printAssemblyError(const char *info) {
-    ostream << "Error generated while processing input: " << info << std::endl;
-    help();
-}
-
 CommandsList BaseCommand::getCommandType() const{
     return commandType;
 }
