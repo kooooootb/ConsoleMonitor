@@ -3,6 +3,8 @@
 
 Init::Init(std::ostream &ostream_) : BaseCommand(CommandsList::INIT, ostream_) {}
 
+const std::string Init::query = "init";
+
 const char *Init::checkAndAssemble(Parser &parser) {
     const char *errorMessage;
 

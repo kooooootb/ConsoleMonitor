@@ -3,6 +3,8 @@
 
 Full::Full(std::ostream &ostream_) : BaseCommand(CommandsList::FULL, ostream_) {}
 
+const std::string Full::query = "full";
+
 const char *Full::checkAndAssemble(Parser &parser) {
     const char *errorMessage;
 

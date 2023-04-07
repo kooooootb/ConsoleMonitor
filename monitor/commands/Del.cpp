@@ -3,6 +3,8 @@
 
 Del::Del(std::ostream &ostream_) : BaseCommand(CommandsList::DEL, ostream_) {}
 
+const std::string Del::query = "del";
+
 const char *Del::checkAndAssemble(Parser &parser) {
     const char *errorMessage;
 

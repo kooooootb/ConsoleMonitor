@@ -3,6 +3,8 @@
 
 Copy::Copy(std::ostream &ostream_) : BaseCommand(CommandsList::COPY, ostream_) {}
 
+const std::string Copy::query = "copy";
+
 const char *Copy::checkAndAssemble(Parser &parser) {
     const char *errorMessage;
 

@@ -3,6 +3,8 @@
 
 Enter::Enter(std::ostream &ostream_) : BaseCommand(CommandsList::ENTER, ostream_) {}
 
+const std::string Enter::query = "enter";
+
 const char *Enter::checkAndAssemble(Parser &parser) {
     const char *errorMessage;
 

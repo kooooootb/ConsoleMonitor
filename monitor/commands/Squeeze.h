@@ -7,6 +7,8 @@ class Squeeze : public BaseCommand {
 public:
     explicit Squeeze(std::ostream& ostream_);
 
+    static const std::string query;
+
     const char *checkAndAssemble(Parser &parser) final;
     int run() final;
 };

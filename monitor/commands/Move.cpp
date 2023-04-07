@@ -3,6 +3,8 @@
 
 Move::Move(std::ostream &ostream_) : BaseCommand(CommandsList::MOVE, ostream_) {}
 
+const std::string Move::query = "move";
+
 const char *Move::checkAndAssemble(Parser &parser) {
     const char *errorMessage;
 

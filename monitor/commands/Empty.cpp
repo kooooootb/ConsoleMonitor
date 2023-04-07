@@ -3,12 +3,14 @@
 
 Empty::Empty(std::ostream &ostream_) : BaseCommand(CommandsList::EMPTY, ostream_) {}
 
+const std::string Empty::query = "empty";
+
 const char *Empty::checkAndAssemble(Parser &parser) {
     return nullptr; // always correct
 }
 
 int Empty::run() {
     // return fs_blackhole();
-    ostream << "blackhole command executed" << std::endl;
+    ostream << "empty command executed" << std::endl;
     return 0;
 }

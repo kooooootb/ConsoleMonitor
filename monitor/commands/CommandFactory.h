@@ -14,10 +14,30 @@
 #include "Squeeze.h"
 
 class CommandFactory {
+private:
+    template<std::size_t index = 0, typename T, class ...Args>
+    static typename std::enable_if<index == std::tuple_size_v<T>, std::shared_ptr<BaseCommand>>::type
+    construct(const std::string &query, Args... args){
+        return nullptr;
+    }
+
+    template<std::size_t index = 0, typename T, class ...Args>
+    static typename std::enable_if<index < std::tuple_size_v<T>, std::shared_ptr<BaseCommand>>::type
+    construct(const std::string &query, Args... args){
+        using CommandClass = std::tuple_element_t<index, T>;
+        if(query == CommandClass::query){
+            return std::make_shared<CommandClass>(args...);
+        }
+
+        return construct<index + 1, T>(query, args...);
+    }
+
 public:
     CommandFactory() = delete;
     CommandFactory(const CommandFactory &) = delete;
     CommandFactory(CommandFactory &&) = delete;
+
+    using CommandClasses = std::tuple<Init, Full, Empty, Enter, Copy, Move, Del, Squeeze>;
 
     /**
      * Фабричный метод создает объект команды из строки запроса
@@ -31,25 +51,7 @@ public:
 
 template<class ...Args>
 std::shared_ptr<BaseCommand> CommandFactory::getCommand(const std::string &commandString, Args ...args) {
-    if (commandString == "init") {
-        return std::make_shared<Init>(args...);
-    } else if(commandString == "full"){
-        return std::make_shared<Full>(args...);
-    } else if(commandString == "empty"){
-        return std::make_shared<Empty>(args...);
-    } else if(commandString == "enter"){
-        return std::make_shared<Enter>(args...);
-    } else if(commandString == "copy"){
-        return std::make_shared<Copy>(args...);
-    } else if(commandString == "move"){
-        return std::make_shared<Move>(args...);
-    } else if(commandString == "del"){
-        return std::make_shared<Del>(args...);
-    } else if(commandString == "squeeze"){
-        return std::make_shared<Squeeze>(args...);
-    } else {
-        return nullptr; // can't find appropriate command
-    }
+    return construct<0, CommandClasses>(commandString, args...);
 }
 
 
