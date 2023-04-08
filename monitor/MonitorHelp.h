@@ -5,10 +5,10 @@
 
 class MonitorHelp {
 private:
-    static constexpr char messages[] = "monitor help";
+    static constexpr char message[] = "monitor help";
 public:
     static const char *getMessage(){
-        return messages;
+        return message;
     }
 };
 

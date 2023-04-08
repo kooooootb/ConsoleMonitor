@@ -17,16 +17,20 @@ private:
     /**
      * Входной поток
      */
-    std::istream &istream = std::cin;
+    std::istream &istream;
     /**
      * Выходной поток
      */
-    std::ostream &ostream = std::cout;
+    std::ostream &ostream;
+    /**
+     * Необходимо ли дублировать входной поток в выходной
+     */
+    bool echoing;
 
     /**
      * Выводимое предложение ввода
      */
-    static constexpr char PROMPT[] = "super monitor :";
+    static constexpr char PROMPT[] = "->";
     /**
      * Функция выводит предложение ввода
      */
@@ -43,8 +47,9 @@ private:
      * @return выходной поток
      */
     std::ostream &printError(const std::string &message);
+    void getInput(std::string &query);
 public:
-    Monitor(std::istream &istream_, std::ostream &ostream_);
+    Monitor(std::istream &istream_, std::ostream &ostream_, bool echoing_);
 
     /**
      * Метод принимает запрос из входного потока и обрабатывает его

@@ -12,6 +12,7 @@
 #include "Move.h"
 #include "Del.h"
 #include "Squeeze.h"
+#include "Help.h"
 
 class CommandFactory {
 private:
@@ -37,7 +38,7 @@ public:
     CommandFactory(const CommandFactory &) = delete;
     CommandFactory(CommandFactory &&) = delete;
 
-    using CommandClasses = std::tuple<Init, Full, Empty, Enter, Copy, Move, Del, Squeeze>;
+    using CommandClasses = std::tuple<Init, Full, Empty, Enter, Copy, Move, Del, Squeeze, Help>;
 
     /**
      * Фабричный метод создает объект команды из строки запроса

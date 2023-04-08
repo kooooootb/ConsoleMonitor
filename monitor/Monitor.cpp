@@ -6,11 +6,13 @@
 #include "CommandFactory.h"
 #include "ParserException.h"
 
-Monitor::Monitor(std::istream &istream_, std::ostream &ostream_) : istream(istream_) , ostream(ostream_) {}
+Monitor::Monitor(std::istream &istream_, std::ostream &ostream_, bool echoing_) :
+istream(istream_) , ostream(ostream_) , echoing(echoing_) {}
 
 bool Monitor::processInput() {
     std::string query;
-    std::getline(istream, query); // get line from stream
+    getInput(query);
+
     if(istream.eof()){
         return false;
     } else{
@@ -19,6 +21,7 @@ bool Monitor::processInput() {
             parser = std::make_shared<Parser>(Parser(query));
         } catch(ParserException &ex){
             ostream << ex.what() << std::endl;
+            help();
             return true;
         }
 
@@ -26,8 +29,6 @@ bool Monitor::processInput() {
         std::string &commandString = parser->getCommand();
         if(commandString == "exit"){ // check if exiting
             continuing = false;
-        } else if(commandString == "help"){ // check if requesting help
-            help();
         } else { // do command thing
             std::shared_ptr<BaseCommand> command = CommandFactory::getCommand(commandString, std::ref(ostream));
             if (command == nullptr) { // if command doesn't exist
@@ -59,4 +60,11 @@ void Monitor::run() {
 
 std::ostream &Monitor::printError(const std::string &message) {
     return ostream << message << std::endl;
+}
+
+void Monitor::getInput(std::string &query) {
+    std::getline(istream, query);
+    if(echoing){
+        ostream << query << std::endl;
+    }
 }

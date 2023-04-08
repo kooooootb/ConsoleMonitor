@@ -1,7 +1,7 @@
 project(commands)
 
 # make library
-SET(commands_list Init.cpp Full.cpp Empty.cpp Enter.cpp Copy.cpp Move.cpp Del.cpp Squeeze.cpp)
+SET(commands_list Init.cpp Full.cpp Empty.cpp Enter.cpp Copy.cpp Move.cpp Del.cpp Squeeze.cpp Help.cpp)
 add_library(commands STATIC CommandHelp.cpp CommandFactory.cpp BaseCommand.cpp ${commands_list})
 
 # make utils visible in cpp
