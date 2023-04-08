@@ -1,13 +1,22 @@
 #include <iostream>
+#include <fstream>
 
 #include "Monitor.h"
 
 //#define NDEBUG // to disable asserts
 
 int main() {
+    std::ifstream istream("input.txt");
+    if(!istream.is_open()){
+        throw std::runtime_error("can't find input file");
+    }
 
+    std::ofstream ostream("output.txt");
+    if(!ostream.is_open()){
+        throw std::runtime_error("can't find output file");
+    }
 
-    Monitor monitor(std::cin, std::cout, false);
+    Monitor monitor(istream, ostream, true);
     monitor.run();
 
     return 0;

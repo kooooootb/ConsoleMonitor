@@ -1,4 +1,5 @@
 #include <fstream>
+#include <iostream>
 
 #include "Monitor.h"
 #include "MonitorHelp.h"
@@ -65,6 +66,6 @@ std::ostream &Monitor::printError(const std::string &message) {
 void Monitor::getInput(std::string &query) {
     std::getline(istream, query);
     if(echoing){
-        ostream << query << std::endl;
+        std::cout << query << std::endl;
     }
 }
