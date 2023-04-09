@@ -48,6 +48,7 @@ private:
      */
     std::ostream &printError(const std::string &message);
     void getInput(std::string &query);
+    std::shared_ptr<Parser> getParser(const std::string &query);
 public:
     Monitor(std::istream &istream_, std::ostream &ostream_, bool echoing_);
 

@@ -17,20 +17,16 @@ bool Monitor::processInput() {
     if(istream.eof()){
         return false;
     } else{
-        std::shared_ptr<Parser> parser;
-        try{
-            parser = std::make_shared<Parser>(Parser(query));
-        } catch(ParserException &ex){
-            ostream << ex.what() << std::endl;
-            help();
-            return true;
-        }
+        std::shared_ptr<Parser> parser = getParser(query);
+        if(parser == nullptr) return true;
 
         bool continuing = true;
         std::string &commandString = parser->getCommand();
+
         if(commandString == "exit"){ // check if exiting
             continuing = false;
         } else { // do command thing
+            // make command object
             std::shared_ptr<BaseCommand> command = CommandFactory::getCommand(commandString);
             if (command == nullptr) { // if command doesn't exist
                 printError("Command " + commandString + " doesn't exist");
@@ -67,5 +63,15 @@ void Monitor::getInput(std::string &query) {
     std::getline(istream, query);
     if(echoing){
         std::cout << query << std::endl;
+    }
+}
+
+std::shared_ptr<Parser> Monitor::getParser(const std::string &query) {
+    try{
+        return std::make_shared<Parser>(Parser(query));
+    } catch(ParserException &ex){
+        ostream << ex.what() << std::endl;
+        help();
+        return nullptr;
     }
 }
