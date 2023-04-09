@@ -7,12 +7,12 @@ class Help : public BaseCommand {
 private:
     static constexpr char helpMessage[] = "monitor help";
 public:
-    explicit Help(std::ostream& ostream_);
+    Help();
 
     static const std::string query;
 
-    const char *checkAndAssemble(Parser &parser) final;
-    int run() final;
+    std::string checkAndAssemble(Parser &parser) final;
+    std::string run() final;
 };
 
 #endif //MAIN_HELP_H

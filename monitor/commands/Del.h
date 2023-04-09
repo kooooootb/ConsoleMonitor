@@ -10,16 +10,16 @@ private:
     static constexpr char WRONGPOSSAMOUNT[] = "invalid positional values amount";
     static constexpr char INCORRECTFILENAME[] = "file name value is incorrect";
 
-    const char *checkAmount(const Parser &parser);
+    std::string checkAmount(const Parser &parser);
 
-    const char *setFilename(posArgs_t &poss);
+    std::string setFilename(posArgs_t &poss);
 public:
-    explicit Del(std::ostream &ostream_);
+    Del();
 
     static const std::string query;
 
-    const char *checkAndAssemble(Parser &parser) final;
-    int run() final;
+    std::string checkAndAssemble(Parser &parser) final;
+    std::string run() final;
 };
 
 #endif //MAIN_DEL_H

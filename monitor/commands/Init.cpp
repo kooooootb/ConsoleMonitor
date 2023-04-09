@@ -1,23 +1,25 @@
+#include <sstream>
+
 #include "Init.h"
 #include "utilFunctions.h"
 
-Init::Init(std::ostream &ostream_) : BaseCommand(CommandsList::INIT, ostream_) {}
+Init::Init() : BaseCommand(CommandsList::INIT) {}
 
 const std::string Init::query = "init";
 
-const char *Init::checkAndAssemble(Parser &parser) {
-    const char *errorMessage;
+std::string Init::checkAndAssemble(Parser &parser) {
+    std::string errorMessage;
 
-    if((errorMessage = checkAmount(parser)) != nullptr) return errorMessage;
+    if(errorMessage = checkAmount(parser); errorMessage.empty()) return errorMessage;
 
-    if((errorMessage = setBlocks(parser.getKeyArgs())) != nullptr) return errorMessage;
-    if((errorMessage = setSegments(parser.getKeyArgs())) != nullptr) return errorMessage;
-    if((errorMessage = setLabel(parser.getPosArgs())) != nullptr) return errorMessage;
+    if(errorMessage = setBlocks(parser.getKeyArgs()); errorMessage.empty()) return errorMessage;
+    if(errorMessage = setSegments(parser.getKeyArgs()); errorMessage.empty()) return errorMessage;
+    if(errorMessage = setLabel(parser.getPosArgs()); errorMessage.empty()) return errorMessage;
 
     return errorMessage;
 }
 
-const char *Init::checkAmount(const Parser &parser) {
+std::string Init::checkAmount(const Parser &parser) {
     if(parser.getKeyArgs().size() != 2){
         return WRONGKEYSAMOUNT;
     }
@@ -25,10 +27,10 @@ const char *Init::checkAmount(const Parser &parser) {
         return WRONGPOSSAMOUNT;
     }
 
-    return nullptr;
+    return "";
 }
 
-const char *Init::setBlocks(const keyArgs_t &keys) {
+std::string Init::setBlocks(const keyArgs_t &keys) {
     if(auto it = keys.find("blocks"); it != keys.end() || ((it = keys.find("b")) != keys.end())) {
         // convert to int
         if(convertToNumber(it->second, blocks)) return BLOCKSCANTCONVERT;
@@ -41,10 +43,10 @@ const char *Init::setBlocks(const keyArgs_t &keys) {
         return NOBLOCKSVALUE;
     }
 
-    return nullptr;
+    return "";
 }
 
-const char *Init::setSegments(const keyArgs_t &keys) {
+std::string Init::setSegments(const keyArgs_t &keys) {
     if(auto it = keys.find("segments"); it != keys.end() || ((it = keys.find("s")) != keys.end())){
         // convert to int
         if (convertToNumber(it->second, segments)) return SEGMENTSCANTCONVERT;
@@ -57,10 +59,10 @@ const char *Init::setSegments(const keyArgs_t &keys) {
         return NOSEGMENTSVALUE;
     }
 
-    return nullptr;
+    return "";
 }
 
-const char *Init::setLabel(posArgs_t &poss) {
+std::string Init::setLabel(posArgs_t &poss) {
     label = poss.empty() ? DEFAULTLABEL : std::move(poss.back()); // label is optional
     poss.pop_back();
 
@@ -68,12 +70,13 @@ const char *Init::setLabel(posArgs_t &poss) {
         return LABELINCORRECT;
     }
 
-    return nullptr;
+    return "";
 }
 
-int Init::run() {
+std::string Init::run() {
     // return fs_init(blocks, segments, label);
-    ostream << "init command executed, blocks: \"" << blocks <<
+    std::stringstream str;
+    str << "init command executed, blocks: \"" << blocks <<
         "\", segments: \"" << segments << "\", label: \"" << label << "\"" << std::endl;
-    return 0;
+    return str.str();
 }

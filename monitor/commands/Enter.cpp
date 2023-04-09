@@ -1,22 +1,24 @@
+#include <sstream>
+
 #include "Enter.h"
 #include "utilFunctions.h"
 
-Enter::Enter(std::ostream &ostream_) : BaseCommand(CommandsList::ENTER, ostream_) {}
+Enter::Enter() : BaseCommand(CommandsList::ENTER) {}
 
 const std::string Enter::query = "enter";
 
-const char *Enter::checkAndAssemble(Parser &parser) {
-    const char *errorMessage;
+std::string Enter::checkAndAssemble(Parser &parser) {
+    std::string errorMessage;
 
-    if((errorMessage = checkAmount(parser)) != nullptr) return errorMessage;
+    if(errorMessage = checkAmount(parser); errorMessage.empty()) return errorMessage;
 
-    if((errorMessage = setLength(parser.getKeyArgs())) != nullptr) return errorMessage;
-    if((errorMessage = setFilename(parser.getPosArgs())) != nullptr) return errorMessage;
+    if(errorMessage = setLength(parser.getKeyArgs()); errorMessage.empty()) return errorMessage;
+    if(errorMessage = setFilename(parser.getPosArgs()); errorMessage.empty()) return errorMessage;
 
     return errorMessage;
 }
 
-const char *Enter::checkAmount(const Parser &parser) {
+std::string Enter::checkAmount(const Parser &parser) {
     if(parser.getKeyArgs().size() != 1){
         return WRONGKEYSAMOUNT;
     }
@@ -24,10 +26,10 @@ const char *Enter::checkAmount(const Parser &parser) {
         return WRONGPOSSAMOUNT;
     }
 
-    return nullptr;
+    return "";
 }
 
-const char *Enter::setLength(const keyArgs_t &keys) {
+std::string Enter::setLength(const keyArgs_t &keys) {
     if(auto it = keys.find("length"); it != keys.end() || ((it = keys.find("l")) != keys.end())) {
         // convert to int
         if(convertToNumber(it->second, length)) return LENGTHCANTCONVERT;
@@ -40,10 +42,10 @@ const char *Enter::setLength(const keyArgs_t &keys) {
         return NOLENGTHVALUE;
     }
 
-    return nullptr;
+    return "";
 }
 
-const char *Enter::setFilename(posArgs_t &poss) {
+std::string Enter::setFilename(posArgs_t &poss) {
     filename = std::move(poss.back());
     poss.pop_back();
 
@@ -51,12 +53,13 @@ const char *Enter::setFilename(posArgs_t &poss) {
         return INCORRECTFILENAME;
     }
 
-    return nullptr;
+    return "";
 }
 
-int Enter::run() {
+std::string Enter::run() {
     // return fs_init(blocks, segments, label);
-    ostream << "enter command executed, length: \"" << length <<
+    std::stringstream stream;
+    stream << "enter command executed, length: \"" << length <<
             "\", filename: \"" << filename << "\"" << std::endl;
-    return 0;
+    return stream.str();
 }

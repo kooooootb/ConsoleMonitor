@@ -1,16 +1,19 @@
+#include <sstream>
+
 #include "Empty.h"
 #include "utilFunctions.h"
 
-Empty::Empty(std::ostream &ostream_) : BaseCommand(CommandsList::EMPTY, ostream_) {}
+Empty::Empty() : BaseCommand(CommandsList::EMPTY) {}
 
 const std::string Empty::query = "empty";
 
-const char *Empty::checkAndAssemble(Parser &parser) {
-    return nullptr; // always correct
+std::string Empty::checkAndAssemble(Parser &parser) {
+    return ""; // always correct
 }
 
-int Empty::run() {
+std::string Empty::run() {
     // return fs_blackhole();
-    ostream << "empty command executed" << std::endl;
-    return 0;
+    std::stringstream stream;
+    stream << "empty command executed" << std::endl;
+    return stream.str();
 }

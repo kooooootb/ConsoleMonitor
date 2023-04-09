@@ -31,13 +31,13 @@ bool Monitor::processInput() {
         if(commandString == "exit"){ // check if exiting
             continuing = false;
         } else { // do command thing
-            std::shared_ptr<BaseCommand> command = CommandFactory::getCommand(commandString, std::ref(ostream));
+            std::shared_ptr<BaseCommand> command = CommandFactory::getCommand(commandString);
             if (command == nullptr) { // if command doesn't exist
                 printError("Command " + commandString + " doesn't exist");
                 help();
             } else { // run command
-                const char *errorMessage = command->processQuery(*parser);
-                if(errorMessage != nullptr) ostream << errorMessage << std::endl;
+                std::string errorMessage = command->processQuery(*parser);
+                if(errorMessage.empty()) ostream << errorMessage << std::endl;
             }
         }
 

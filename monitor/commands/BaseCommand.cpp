@@ -1,29 +1,26 @@
-#include <fstream>
-
-#include "CommandFactory.h"
 #include "utilFunctions.h"
 #include "ParserException.h"
 #include "BaseCommand.h"
 #include "CommandHelp.h"
 
-BaseCommand::BaseCommand(CommandsList commandType_, std::ostream &ostream_):
-ostream(ostream_) , commandType(commandType_) {}
+BaseCommand::BaseCommand(CommandsList commandType_):
+commandType(commandType_) {}
 
-std::ostream &BaseCommand::help() {
-    return ostream << CommandHelp::getMessage(commandType) << std::endl;
+std::string BaseCommand::help() {
+    return CommandHelp::getMessage(commandType);
 }
 
-const char *BaseCommand::processQuery(Parser &parser) {
+std::string BaseCommand::processQuery(Parser &parser) {
     auto poss = parser.getBoolArgs();
-    const char *errorMessage = nullptr;
+    std::string resultMessage;
 
     if(std::find(std::begin(poss), std::end(poss), "help") != std::end(poss)){
         help();
-    } else if((errorMessage = checkAndAssemble(parser)) == nullptr) { // parser becomes invalid here, if no error
-        run();
+    } else if(resultMessage = checkAndAssemble(parser); resultMessage.empty()) { // parser becomes invalid here, if no error
+        resultMessage = run();
     }
 
-    return errorMessage;
+    return resultMessage;
 }
 
 CommandsList BaseCommand::getCommandType() const{

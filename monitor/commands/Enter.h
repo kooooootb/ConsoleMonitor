@@ -15,17 +15,17 @@ private:
     static constexpr char NOLENGTHVALUE[] = "no length key value";
     static constexpr char INCORRECTFILENAME[] = "label value is incorrect";
 
-    const char *checkAmount(const Parser &parser);
+    std::string checkAmount(const Parser &parser);
 
-    const char *setLength(const keyArgs_t &keys);
-    const char *setFilename(posArgs_t &poss);
+    std::string setLength(const keyArgs_t &keys);
+    std::string setFilename(posArgs_t &poss);
 public:
-    explicit Enter(std::ostream &ostream_);
+    Enter();
 
     static const std::string query;
 
-    const char *checkAndAssemble(Parser &parser) final;
-    int run() final;
+    std::string checkAndAssemble(Parser &parser) final;
+    std::string run() final;
 };
 
 #endif //MAIN_ENTER_H

@@ -1,29 +1,31 @@
+#include <sstream>
+
 #include "Del.h"
 #include "utilFunctions.h"
 
-Del::Del(std::ostream &ostream_) : BaseCommand(CommandsList::DEL, ostream_) {}
+Del::Del() : BaseCommand(CommandsList::DEL) {}
 
 const std::string Del::query = "del";
 
-const char *Del::checkAndAssemble(Parser &parser) {
-    const char *errorMessage;
+std::string Del::checkAndAssemble(Parser &parser) {
+    std::string errorMessage;
 
-    if((errorMessage = checkAmount(parser)) != nullptr) return errorMessage;
+    if(errorMessage = checkAmount(parser); errorMessage.empty()) return errorMessage;
 
-    if((errorMessage = setFilename(parser.getPosArgs())) != nullptr) return errorMessage;
+    if(errorMessage = setFilename(parser.getPosArgs()); errorMessage.empty()) return errorMessage;
 
     return errorMessage;
 }
 
-const char *Del::checkAmount(const Parser &parser) {
+std::string Del::checkAmount(const Parser &parser) {
     if(parser.getPosArgs().size() != 1){
         return WRONGPOSSAMOUNT;
     }
 
-    return nullptr;
+    return "";
 }
 
-const char *Del::setFilename(posArgs_t &poss) {
+std::string Del::setFilename(posArgs_t &poss) {
     filename = std::move(poss.back());
     poss.pop_back();
 
@@ -31,11 +33,12 @@ const char *Del::setFilename(posArgs_t &poss) {
         return INCORRECTFILENAME;
     }
 
-    return nullptr;
+    return "";
 }
 
-int Del::run() {
+std::string Del::run() {
     // return fs_init(blocks, segments, label);
-    ostream << "del command executed, file name: \"" << filename << "\"" << std::endl;
-    return 0;
+    std::stringstream stream;
+    stream << "del command executed, file name: \"" << filename << "\"" << std::endl;
+    return stream.str();
 }

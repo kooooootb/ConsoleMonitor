@@ -1,30 +1,32 @@
+#include <sstream>
+
 #include "Copy.h"
 #include "utilFunctions.h"
 
-Copy::Copy(std::ostream &ostream_) : BaseCommand(CommandsList::COPY, ostream_) {}
+Copy::Copy() : BaseCommand(CommandsList::COPY) {}
 
 const std::string Copy::query = "copy";
 
-const char *Copy::checkAndAssemble(Parser &parser) {
-    const char *errorMessage;
+std::string Copy::checkAndAssemble(Parser &parser) {
+    std::string errorMessage;
 
-    if((errorMessage = checkAmount(parser)) != nullptr) return errorMessage;
+    if(errorMessage = checkAmount(parser); errorMessage.empty()) return errorMessage;
 
-    if((errorMessage = setNewFile(parser.getPosArgs())) != nullptr) return errorMessage;
-    if((errorMessage = setOldFile(parser.getPosArgs())) != nullptr) return errorMessage;
+    if(errorMessage = setNewFile(parser.getPosArgs()); errorMessage.empty()) return errorMessage;
+    if(errorMessage = setOldFile(parser.getPosArgs()); errorMessage.empty()) return errorMessage;
 
     return errorMessage;
 }
 
-const char *Copy::checkAmount(const Parser &parser) {
+std::string Copy::checkAmount(const Parser &parser) {
     if(parser.getPosArgs().size() != 2){
         return WRONGPOSSAMOUNT;
     }
 
-    return nullptr;
+    return "";
 }
 
-const char *Copy::setOldFile(posArgs_t &poss) {
+std::string Copy::setOldFile(posArgs_t &poss) {
     oldFile = std::move(poss.back());
     poss.pop_back();
 
@@ -32,10 +34,10 @@ const char *Copy::setOldFile(posArgs_t &poss) {
         return INCORRECTOLDFILE;
     }
 
-    return nullptr;
+    return "";
 }
 
-const char *Copy::setNewFile(posArgs_t &poss) {
+std::string Copy::setNewFile(posArgs_t &poss) {
     newFile = std::move(poss.back());
     poss.pop_back();
 
@@ -43,12 +45,13 @@ const char *Copy::setNewFile(posArgs_t &poss) {
         return INCORRECTNEWFILE;
     }
 
-    return nullptr;
+    return "";
 }
 
-int Copy::run() {
+std::string Copy::run() {
     // return fs_init(blocks, segments, label);
-    ostream << "copy command executed, old file: \"" << oldFile <<
+    std::stringstream stream;
+    stream << "copy command executed, old file: \"" << oldFile <<
             "\", new file: \"" << newFile << "\"" << std::endl;
-    return 0;
+    return stream.str();
 }

@@ -1,14 +1,16 @@
+#include <sstream>
+
 #include "Full.h"
 #include "utilFunctions.h"
 
-Full::Full(std::ostream &ostream_) : BaseCommand(CommandsList::FULL, ostream_) {}
+Full::Full() : BaseCommand(CommandsList::FULL) {}
 
 const std::string Full::query = "full";
 
-const char *Full::checkAndAssemble(Parser &parser) {
-    const char *errorMessage;
+std::string Full::checkAndAssemble(Parser &parser) {
+    std::string errorMessage;
 
-    if((errorMessage = checkAmount(parser)) != nullptr) return errorMessage;
+    if(errorMessage = checkAmount(parser); errorMessage.empty()) return errorMessage;
 
     setEmpty(parser.getBoolArgs());
     setHeader(parser.getBoolArgs());
@@ -17,12 +19,12 @@ const char *Full::checkAndAssemble(Parser &parser) {
     return errorMessage;
 }
 
-const char *Full::checkAmount(const Parser &parser) {
+std::string Full::checkAmount(const Parser &parser) {
     if(parser.getBoolArgs().size() > 3){
         return WRONGBOOLSAMOUNT;
     }
 
-    return nullptr;
+    return "";
 }
 
 void Full::setEmpty(const boolArgs_t &bools) {
@@ -37,9 +39,10 @@ void Full::setHeaderonly(const boolArgs_t &bools) {
     findAndSetBoolArg(bools, headeronly, "headeronly", "o");
 }
 
-int Full::run() {
+std::string Full::run() {
     // return fs_full(empty, header, headeronly);
-    ostream << "full command executed, empty: \"" << empty <<
+    std::stringstream stream;
+    stream << "full command executed, empty: \"" << empty <<
             "\", header: \"" << header << "\", headeronly: \"" << headeronly << "\"" << std::endl;
-    return 0;
+    return stream.str();
 }

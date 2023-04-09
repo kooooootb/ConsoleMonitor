@@ -1,14 +1,17 @@
+#include <sstream>
+
 #include "Help.h"
 
-Help::Help(std::ostream &ostream_) : BaseCommand(CommandsList::HELP, ostream_) {}
+Help::Help() : BaseCommand(CommandsList::HELP) {}
 
 const std::string Help::query = "help";
 
-const char *Help::checkAndAssemble(Parser &parser) {
-    return nullptr; // always correct
+std::string Help::checkAndAssemble(Parser &parser) {
+    return ""; // always correct
 }
 
-int Help::run() {
-    ostream << helpMessage << std::endl;
-    return 0;
+std::string Help::run() {
+    std::stringstream stream;
+    stream << helpMessage << std::endl;
+    return stream.str();
 }

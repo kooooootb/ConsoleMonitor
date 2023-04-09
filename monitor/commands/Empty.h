@@ -5,12 +5,12 @@
 
 class Empty : public BaseCommand {
 public:
-    explicit Empty(std::ostream& ostream_);
+    Empty();
 
     static const std::string query;
 
-    const char *checkAndAssemble(Parser &parser) final;
-    int run() final;
+    std::string checkAndAssemble(Parser &parser) final;
+    std::string run() final;
 };
 
 #endif //MAIN_EMPTY_H

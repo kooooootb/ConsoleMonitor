@@ -11,18 +11,18 @@ private:
 
     static constexpr char WRONGBOOLSAMOUNT[] = "invalid boolean values amount";
 
-    const char *checkAmount(const Parser &parser);
+    std::string checkAmount(const Parser &parser);
 
     void setEmpty(const boolArgs_t &bools);
     void setHeader(const boolArgs_t &bools);
     void setHeaderonly(const boolArgs_t &bools);
 public:
-    explicit Full(std::ostream& ostream_);
+    Full();
 
     static const std::string query;
 
-    const char *checkAndAssemble(Parser &parser) final;
-    int run() final;
+    std::string checkAndAssemble(Parser &parser) final;
+    std::string run() final;
 };
 
 

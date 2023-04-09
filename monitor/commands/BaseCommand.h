@@ -22,29 +22,24 @@ private:
     CommandsList commandType;
 protected:
     /**
-     * Поток для вывода сообщений
-     */
-    std::ostream& ostream;
-
-    /**
      * Метод проверяет аргументы из объекта парсера и собирает их в соответствующие команде переменные
      * @param parser объект парсера, содержащий массивы полученных аргументов
      * @return сообщение об ошибке (при ошибке)
      */
-    virtual const char *checkAndAssemble(Parser &parser) = 0;
+    virtual std::string checkAndAssemble(Parser &parser) = 0;
 
     /**
      * Метод запускает соответствующую команде функцию ФС
      * @return Код ошибки или void в зависимости от команды
      */
-    virtual int run() = 0;
+    virtual std::string run() = 0;
     /**
      * Выводит в сохраненный поток вывода информацию о команде
      * @return Сохраненный поток вывода
      */
-    std::ostream &help();
+    std::string help();
 public:
-    explicit BaseCommand(CommandsList commandType_, std::ostream &ostream_);
+    explicit BaseCommand(CommandsList commandType_);
 
     virtual ~BaseCommand() = default;
 
@@ -53,7 +48,7 @@ public:
      * @param parser объект парсера обработавший запрос
      * @return сообщение об ошибке (при ошибке)
      */
-    const char *processQuery(Parser &parser);
+    std::string processQuery(Parser &parser);
 
     /**
      * Возвращает тип команды

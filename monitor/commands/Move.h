@@ -12,17 +12,17 @@ private:
     static constexpr char INCORRECTOLDFILE[] = "old file name value is incorrect";
     static constexpr char INCORRECTNEWFILE[] = "new file name value is incorrect";
 
-    const char *checkAmount(const Parser &parser);
+    std::string checkAmount(const Parser &parser);
 
-    const char *setOldFile(posArgs_t &poss);
-    const char *setNewFile(posArgs_t &poss);
+    std::string setOldFile(posArgs_t &poss);
+    std::string setNewFile(posArgs_t &poss);
 public:
-    explicit Move(std::ostream &ostream_);
+    Move();
 
     static const std::string query;
 
-    const char *checkAndAssemble(Parser &parser) final;
-    int run() final;
+    std::string checkAndAssemble(Parser &parser) final;
+    std::string run() final;
 };
 
 #endif //MAIN_MOVE_H

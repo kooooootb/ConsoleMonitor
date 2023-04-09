@@ -1,15 +1,18 @@
+#include <sstream>
+
 #include "Squeeze.h"
 
-Squeeze::Squeeze(std::ostream &ostream_) : BaseCommand(CommandsList::SQUEZZE, ostream_) {}
+Squeeze::Squeeze() : BaseCommand(CommandsList::SQUEZZE) {}
 
 const std::string Squeeze::query = "squeeze";
 
-const char *Squeeze::checkAndAssemble(Parser &parser) {
-    return nullptr; // always correct
+std::string Squeeze::checkAndAssemble(Parser &parser) {
+    return ""; // always correct
 }
 
-int Squeeze::run() {
+std::string Squeeze::run() {
     // return fs_squeeze();
-    ostream << "squeeze command executed" << std::endl;
-    return 0;
+    std::stringstream stream;
+    stream << "squeeze command executed" << std::endl;
+    return stream.str();
 }

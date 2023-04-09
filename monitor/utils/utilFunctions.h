@@ -1,6 +1,8 @@
 #ifndef MAIN_UTILFUNCTIONS_H
 #define MAIN_UTILFUNCTIONS_H
 
+#include <stdexcept>
+
 #include "Parser.h"
 
 /**
