@@ -1,0 +1,607 @@
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->init command executed, blocks: "2", segments: "16", label: "label1"
+->init command executed, blocks: "123", segments: "21", label: "label 2"
+->monitor help
+->full command executed, empty: "0", header: "0", headeronly: "0"
+->move command executed, old file: "file1", new file: "file2"
+->invalid positional values amount
+->
