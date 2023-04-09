@@ -10,10 +10,10 @@ const std::string Enter::query = "enter";
 std::string Enter::checkAndAssemble(Parser &parser) {
     std::string errorMessage;
 
-    if(errorMessage = checkAmount(parser); errorMessage.empty()) return errorMessage;
+    if(errorMessage = checkAmount(parser); !errorMessage.empty()) return errorMessage;
 
-    if(errorMessage = setLength(parser.getKeyArgs()); errorMessage.empty()) return errorMessage;
-    if(errorMessage = setFilename(parser.getPosArgs()); errorMessage.empty()) return errorMessage;
+    if(errorMessage = setLength(parser.getKeyArgs()); !errorMessage.empty()) return errorMessage;
+    if(errorMessage = setFilename(parser.getPosArgs()); !errorMessage.empty()) return errorMessage;
 
     return errorMessage;
 }
@@ -60,6 +60,6 @@ std::string Enter::run() {
     // return fs_init(blocks, segments, label);
     std::stringstream stream;
     stream << "enter command executed, length: \"" << length <<
-            "\", filename: \"" << filename << "\"" << std::endl;
+            "\", filename: \"" << filename << "\"";
     return stream.str();
 }

@@ -10,10 +10,10 @@ const std::string Move::query = "move";
 std::string Move::checkAndAssemble(Parser &parser) {
     std::string errorMessage;
 
-    if(errorMessage = checkAmount(parser); errorMessage.empty()) return errorMessage;
+    if(errorMessage = checkAmount(parser); !errorMessage.empty()) return errorMessage;
 
-    if(errorMessage = setNewFile(parser.getPosArgs()); errorMessage.empty()) return errorMessage;
-    if(errorMessage = setOldFile(parser.getPosArgs()); errorMessage.empty()) return errorMessage;
+    if(errorMessage = setNewFile(parser.getPosArgs()); !errorMessage.empty()) return errorMessage;
+    if(errorMessage = setOldFile(parser.getPosArgs()); !errorMessage.empty()) return errorMessage;
 
     return errorMessage;
 }
@@ -52,6 +52,6 @@ std::string Move::run() {
     // return fs_init(blocks, segments, label);
     std::stringstream stream;
     stream << "move command executed, old file: \"" << oldFile <<
-            "\", new file: \"" << newFile << "\"" << std::endl;
+            "\", new file: \"" << newFile << "\"";
     return stream.str();
 }

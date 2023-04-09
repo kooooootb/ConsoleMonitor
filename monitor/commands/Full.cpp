@@ -10,7 +10,7 @@ const std::string Full::query = "full";
 std::string Full::checkAndAssemble(Parser &parser) {
     std::string errorMessage;
 
-    if(errorMessage = checkAmount(parser); errorMessage.empty()) return errorMessage;
+    if(errorMessage = checkAmount(parser); !errorMessage.empty()) return errorMessage;
 
     setEmpty(parser.getBoolArgs());
     setHeader(parser.getBoolArgs());
@@ -43,6 +43,6 @@ std::string Full::run() {
     // return fs_full(empty, header, headeronly);
     std::stringstream stream;
     stream << "full command executed, empty: \"" << empty <<
-            "\", header: \"" << header << "\", headeronly: \"" << headeronly << "\"" << std::endl;
+            "\", header: \"" << header << "\", headeronly: \"" << headeronly << "\"";
     return stream.str();
 }

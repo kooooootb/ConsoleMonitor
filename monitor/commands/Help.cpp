@@ -11,7 +11,5 @@ std::string Help::checkAndAssemble(Parser &parser) {
 }
 
 std::string Help::run() {
-    std::stringstream stream;
-    stream << helpMessage << std::endl;
-    return stream.str();
+    return helpMessage;
 }

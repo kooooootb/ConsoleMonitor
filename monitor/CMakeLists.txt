@@ -4,7 +4,7 @@ project(monitor)
 set(Monitor_root ${CMAKE_CURRENT_LIST_DIR})
 
 # make monitor library
-add_library(monitor STATIC Monitor.cpp)
+add_library(monitor STATIC Monitor.cpp MonitorOutput.cpp MonitorInput.cpp)
 
 # make commands files visible in cpp files
 target_include_directories(monitor PUBLIC "${Monitor_root}/commands")

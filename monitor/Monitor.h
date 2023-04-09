@@ -5,6 +5,8 @@
 #include <memory>
 
 #include "CommandFactory.h"
+#include "MonitorInput.h"
+#include "MonitorOutput.h"
 
 /**
  * Класс реализует монитор, принимает строки запросов из входного потока, передает выходную информацию в выходной поток
@@ -14,18 +16,8 @@
  */
 class Monitor {
 private:
-    /**
-     * Входной поток
-     */
-    std::istream &istream;
-    /**
-     * Выходной поток
-     */
-    std::ostream &ostream;
-    /**
-     * Необходимо ли дублировать входной поток в выходной
-     */
-    bool echoing;
+    std::unique_ptr<MonitorOutput> outputer;
+    std::unique_ptr<MonitorInput> inputer;
 
     /**
      * Выводимое предложение ввода
@@ -40,14 +32,7 @@ private:
      * Выводит в сохраненный поток вывода информацию о работе монитора (результат loadHelp)
      * @return Сохраненный поток вывода
      */
-    std::ostream &help();
-    /**
-     * Метод выводит сообщение об ошибке в выходной поток
-     * @param message сообщение об ошибке
-     * @return выходной поток
-     */
-    std::ostream &printError(const std::string &message);
-    void getInput(std::string &query);
+    void printHelp();
     std::shared_ptr<Parser> getParser(const std::string &query);
 public:
     Monitor(std::istream &istream_, std::ostream &ostream_, bool echoing_);

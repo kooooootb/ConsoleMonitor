@@ -10,9 +10,9 @@ const std::string Del::query = "del";
 std::string Del::checkAndAssemble(Parser &parser) {
     std::string errorMessage;
 
-    if(errorMessage = checkAmount(parser); errorMessage.empty()) return errorMessage;
+    if(errorMessage = checkAmount(parser); !errorMessage.empty()) return errorMessage;
 
-    if(errorMessage = setFilename(parser.getPosArgs()); errorMessage.empty()) return errorMessage;
+    if(errorMessage = setFilename(parser.getPosArgs()); !errorMessage.empty()) return errorMessage;
 
     return errorMessage;
 }
@@ -39,6 +39,6 @@ std::string Del::setFilename(posArgs_t &poss) {
 std::string Del::run() {
     // return fs_init(blocks, segments, label);
     std::stringstream stream;
-    stream << "del command executed, file name: \"" << filename << "\"" << std::endl;
+    stream << "del command executed, file name: \"" << filename << "\"";
     return stream.str();
 }

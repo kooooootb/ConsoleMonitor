@@ -13,6 +13,6 @@ std::string Squeeze::checkAndAssemble(Parser &parser) {
 std::string Squeeze::run() {
     // return fs_squeeze();
     std::stringstream stream;
-    stream << "squeeze command executed" << std::endl;
+    stream << "squeeze command executed";
     return stream.str();
 }

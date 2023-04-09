@@ -17,5 +17,6 @@
 + library of messages
 test command functionality
 + do separate vector for bool values
-bool + pos values == key value
-wrap util in namespace
+/ bool + pos values == key value
+? wrap util in namespace
+monitor output to output data monitor input to get data make em mutable and mark function const

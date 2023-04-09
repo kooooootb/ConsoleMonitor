@@ -10,11 +10,11 @@ const std::string Init::query = "init";
 std::string Init::checkAndAssemble(Parser &parser) {
     std::string errorMessage;
 
-    if(errorMessage = checkAmount(parser); errorMessage.empty()) return errorMessage;
+    if(errorMessage = checkAmount(parser); !errorMessage.empty()) return errorMessage;
 
-    if(errorMessage = setBlocks(parser.getKeyArgs()); errorMessage.empty()) return errorMessage;
-    if(errorMessage = setSegments(parser.getKeyArgs()); errorMessage.empty()) return errorMessage;
-    if(errorMessage = setLabel(parser.getPosArgs()); errorMessage.empty()) return errorMessage;
+    if(errorMessage = setBlocks(parser.getKeyArgs()); !errorMessage.empty()) return errorMessage;
+    if(errorMessage = setSegments(parser.getKeyArgs()); !errorMessage.empty()) return errorMessage;
+    if(errorMessage = setLabel(parser.getPosArgs()); !errorMessage.empty()) return errorMessage;
 
     return errorMessage;
 }
@@ -77,6 +77,6 @@ std::string Init::run() {
     // return fs_init(blocks, segments, label);
     std::stringstream str;
     str << "init command executed, blocks: \"" << blocks <<
-        "\", segments: \"" << segments << "\", label: \"" << label << "\"" << std::endl;
+        "\", segments: \"" << segments << "\", label: \"" << label << "\"";
     return str.str();
 }

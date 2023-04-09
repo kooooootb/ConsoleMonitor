@@ -14,6 +14,6 @@ std::string Empty::checkAndAssemble(Parser &parser) {
 std::string Empty::run() {
     // return fs_blackhole();
     std::stringstream stream;
-    stream << "empty command executed" << std::endl;
+    stream << "empty command executed";
     return stream.str();
 }
