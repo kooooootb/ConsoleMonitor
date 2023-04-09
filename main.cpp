@@ -3,8 +3,6 @@
 
 #include "Monitor.h"
 
-//#define NDEBUG // to disable asserts
-
 int main() {
     std::ifstream istream("input.txt");
     if(!istream.is_open()){
