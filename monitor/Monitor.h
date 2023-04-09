@@ -26,14 +26,14 @@ private:
     /**
      * Функция выводит предложение ввода
      */
-    void showPrompt();
+    void showPrompt() const;
 
     /**
      * Выводит в сохраненный поток вывода информацию о работе монитора (результат loadHelp)
      * @return Сохраненный поток вывода
      */
-    void printHelp();
-    std::shared_ptr<Parser> getParser(const std::string &query);
+    void printHelp() const;
+    std::shared_ptr<Parser> getParser(const std::string &query) const;
 public:
     Monitor(std::istream &istream_, std::ostream &ostream_, bool echoing_);
 

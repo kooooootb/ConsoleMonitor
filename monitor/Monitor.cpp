@@ -48,11 +48,11 @@ bool Monitor::processInput() {
     }
 }
 
-void Monitor::printHelp() {
+void Monitor::printHelp() const {
     *outputer << MonitorHelp::getMessage() << "\n";
 }
 
-void Monitor::showPrompt() {
+void Monitor::showPrompt() const {
     *outputer << PROMPT;
 }
 
@@ -62,7 +62,7 @@ void Monitor::run() {
     }while(processInput());
 }
 
-std::shared_ptr<Parser> Monitor::getParser(const std::string &query) {
+std::shared_ptr<Parser> Monitor::getParser(const std::string &query) const {
     try{
         return std::make_shared<Parser>(Parser(query));
     } catch(ParserException &ex){
