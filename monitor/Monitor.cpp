@@ -11,7 +11,7 @@ Monitor::Monitor(std::istream &istream_, std::ostream &ostream_, bool echoing_) 
     // init in out objs
     if(echoing_){
         outputer = std::make_unique<MonitorOutput>(ostream_, std::cout);
-        inputer = std::make_unique<MonitorInput>(istream_, std::cout);
+        inputer = std::make_unique<MonitorInput>(istream_, std::vector{ &std::cout, &ostream_});
     } else{
         outputer = std::make_unique<MonitorOutput>(ostream_);
         inputer = std::make_unique<MonitorInput>(istream_);

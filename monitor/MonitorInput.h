@@ -7,10 +7,10 @@
 class MonitorInput {
 private:
     std::istream &istream;
-    std::ostream *echo;
+    std::vector<std::ostream *> echoes;
 public:
     explicit MonitorInput(std::istream &istream_);
-    MonitorInput(std::istream &istream_, std::ostream &echo_);
+    MonitorInput(std::istream &istream_, std::vector<std::ostream *> echoes_);
 
     std::string getline();
     bool eof() const;
