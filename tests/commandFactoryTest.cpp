@@ -8,6 +8,6 @@ namespace{
     TEST(parseCommand, inittype){
         std::ostream &ostream = std::cout;
         std::string query = "init";
-        EXPECT_EQ(CommandFactory::getCommand(query, std::ref(ostream))->getCommandType(), CommandsList::INIT);
+        EXPECT_EQ(CommandFactory::getCommand(query)->getCommandType(), CommandsList::INIT);
     }
 }
