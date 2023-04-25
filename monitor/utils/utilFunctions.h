@@ -2,7 +2,6 @@
 #define MAIN_UTILFUNCTIONS_H
 
 #include <stdexcept>
-#include <functional>
 #include <algorithm>
 
 #include "Parser.h"
