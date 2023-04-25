@@ -15,9 +15,12 @@ std::string BaseCommand::processQuery(Parser &parser) {
     std::string resultMessage;
 
     if(std::find(std::begin(poss), std::end(poss), "help") != std::end(poss)){
-        help();
+        return help();
     } else if(resultMessage = checkAndAssemble(parser); resultMessage.empty()) { // parser becomes invalid here, if no error
         resultMessage = run();
+    } else{
+        resultMessage += '\n';
+        resultMessage += help();
     }
 
     return resultMessage;
