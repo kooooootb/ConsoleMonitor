@@ -60,6 +60,8 @@ void Monitor::run() {
     do{
         showPrompt();
     }while(processInput());
+
+    *outputer << MONITOR_EXIT_MESSAGE;
 }
 
 std::shared_ptr<Parser> Monitor::getParser(const std::string &query) const {

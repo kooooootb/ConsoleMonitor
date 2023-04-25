@@ -18,6 +18,7 @@ class Monitor {
 private:
     std::unique_ptr<MonitorOutput> outputer;
     std::unique_ptr<MonitorInput> inputer;
+    static constexpr const char MONITOR_EXIT_MESSAGE[] = "Exit message";
 
     /**
      * Выводимое предложение ввода
