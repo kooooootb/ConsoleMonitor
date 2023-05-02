@@ -5,7 +5,9 @@
 
 Copy::Copy() = default;
 
-const std::string Copy::query = "copy";
+std::string Copy::getQuery(){
+    return "copy";
+}
 
 std::string Copy::checkAndAssemble(Parser &parser) {
     std::string errorMessage;

@@ -5,7 +5,9 @@
 
 Enter::Enter() = default;
 
-const std::string Enter::query = "enter";
+std::string Enter::getQuery(){
+    return "enter";
+}
 
 std::string Enter::checkAndAssemble(Parser &parser) {
     std::string errorMessage;

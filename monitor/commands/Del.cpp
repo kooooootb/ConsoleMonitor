@@ -5,7 +5,9 @@
 
 Del::Del() = default;
 
-const std::string Del::query = "del";
+std::string Del::getQuery(){
+    return "del";
+}
 
 std::string Del::checkAndAssemble(Parser &parser) {
     std::string errorMessage;

@@ -5,7 +5,9 @@
 
 Empty::Empty() = default;
 
-const std::string Empty::query = "empty";
+std::string Empty::getQuery(){
+    return "empty";
+}
 
 std::string Empty::checkAndAssemble(Parser &parser) {
     return ""; // always correct

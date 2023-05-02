@@ -26,7 +26,7 @@ private:
     static typename std::enable_if<index < std::tuple_size_v<T>, std::shared_ptr<BaseCommand>>::type
     construct(const std::string &query, Args... args){
         using CommandClass = std::tuple_element_t<index, T>;
-        if(query == CommandClass::query){
+        if(query == CommandClass::getQuery()){
             return std::make_shared<CommandClass>(args...);
         }
 

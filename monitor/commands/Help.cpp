@@ -4,7 +4,9 @@
 
 Help::Help() = default;
 
-const std::string Help::query = "help";
+std::string Help::getQuery(){
+    return "help";
+}
 
 std::string Help::checkAndAssemble(Parser &parser) {
     return ""; // always correct

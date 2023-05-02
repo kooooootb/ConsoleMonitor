@@ -4,7 +4,9 @@
 
 Squeeze::Squeeze() = default;
 
-const std::string Squeeze::query = "squeeze";
+std::string Squeeze::getQuery(){
+    return "squeeze";
+}
 
 std::string Squeeze::checkAndAssemble(Parser &parser) {
     return ""; // always correct

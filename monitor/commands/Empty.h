@@ -9,7 +9,7 @@ protected:
 public:
     Empty();
 
-    static const std::string query;
+    static std::string getQuery();
 
     std::string checkAndAssemble(Parser &parser) final;
     std::string run() final;

@@ -5,7 +5,9 @@
 
 Full::Full() = default;
 
-const std::string Full::query = "full";
+std::string Full::getQuery(){
+    return "full";
+}
 
 std::string Full::checkAndAssemble(Parser &parser) {
     std::string errorMessage;

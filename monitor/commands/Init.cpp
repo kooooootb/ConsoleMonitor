@@ -5,7 +5,9 @@
 
 Init::Init() = default;
 
-const std::string Init::query = "init";
+std::string Init::getQuery(){
+    return "init";
+}
 
 std::string Init::checkAndAssemble(Parser &parser) {
     std::string errorMessage;

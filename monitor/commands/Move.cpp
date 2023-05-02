@@ -5,7 +5,9 @@
 
 Move::Move() = default;
 
-const std::string Move::query = "move";
+std::string Move::getQuery(){
+    return "move";
+}
 
 std::string Move::checkAndAssemble(Parser &parser) {
     std::string errorMessage;
