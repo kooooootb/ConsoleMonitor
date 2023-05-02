@@ -9,17 +9,11 @@
 #include <algorithm>
 
 #include "Parser.h"
-#include "CommandList.h"
 
 /**
  * Класс образует базу для дальнейших классов-команд, хранит общие методы обработки введенной строки
  */
 class BaseCommand {
-private:
-    /**
-     * Тип данной команды из перенумерования
-     */
-    CommandsList commandType;
 protected:
     /**
      * Метод проверяет аргументы из объекта парсера и собирает их в соответствующие команде переменные
@@ -37,9 +31,9 @@ protected:
      * Выводит в сохраненный поток вывода информацию о команде
      * @return Сохраненный поток вывода
      */
-    std::string help();
+    virtual std::string help() = 0;
 public:
-    explicit BaseCommand(CommandsList commandType_);
+    explicit BaseCommand();
 
     virtual ~BaseCommand() = default;
 
@@ -49,12 +43,6 @@ public:
      * @return сообщение об ошибке (при ошибке)
      */
     std::string processQuery(Parser &parser);
-
-    /**
-     * Возвращает тип команды
-     * @return тип команды
-     */
-    CommandsList getCommandType() const;
 };
 
 #endif //MONITOR_BASECOMMAND_H

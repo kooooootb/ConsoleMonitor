@@ -2,7 +2,7 @@
 
 #include "Help.h"
 
-Help::Help() : BaseCommand(CommandsList::HELP) {}
+Help::Help() = default;
 
 const std::string Help::query = "help";
 
@@ -11,5 +11,9 @@ std::string Help::checkAndAssemble(Parser &parser) {
 }
 
 std::string Help::run() {
+    return helpMessage;
+}
+
+std::string Help::help() {
     return helpMessage;
 }

@@ -3,7 +3,7 @@
 #include "Empty.h"
 #include "utilFunctions.h"
 
-Empty::Empty() : BaseCommand(CommandsList::EMPTY) {}
+Empty::Empty() = default;
 
 const std::string Empty::query = "empty";
 
@@ -16,4 +16,8 @@ std::string Empty::run() {
     std::stringstream stream;
     stream << "empty command executed";
     return stream.str();
+}
+
+std::string Empty::help() {
+    return "empty help";
 }

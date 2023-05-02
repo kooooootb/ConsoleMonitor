@@ -6,6 +6,8 @@
 class Help : public BaseCommand {
 private:
     static constexpr char helpMessage[] = "monitor help";
+protected:
+    std::string help() override;
 public:
     Help();
 

@@ -4,6 +4,8 @@
 #include "BaseCommand.h"
 
 class Squeeze : public BaseCommand {
+protected:
+    std::string help() override;
 public:
     Squeeze();
 

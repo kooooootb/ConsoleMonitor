@@ -3,7 +3,7 @@
 #include "Full.h"
 #include "utilFunctions.h"
 
-Full::Full() : BaseCommand(CommandsList::FULL) {}
+Full::Full() = default;
 
 const std::string Full::query = "full";
 
@@ -45,4 +45,8 @@ std::string Full::run() {
     stream << "full command executed, empty: \"" << empty <<
             "\", header: \"" << header << "\", headeronly: \"" << headeronly << "\"";
     return stream.str();
+}
+
+std::string Full::help() {
+    return "full help";
 }

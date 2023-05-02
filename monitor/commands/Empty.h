@@ -4,6 +4,8 @@
 #include "BaseCommand.h"
 
 class Empty : public BaseCommand {
+protected:
+    std::string help() override;
 public:
     Empty();
 

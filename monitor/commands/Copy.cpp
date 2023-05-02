@@ -3,7 +3,7 @@
 #include "Copy.h"
 #include "utilFunctions.h"
 
-Copy::Copy() : BaseCommand(CommandsList::COPY) {}
+Copy::Copy() = default;
 
 const std::string Copy::query = "copy";
 
@@ -54,4 +54,8 @@ std::string Copy::run() {
     stream << "copy command executed, old file: \"" << oldFile <<
             "\", new file: \"" << newFile << "\"";
     return stream.str();
+}
+
+std::string Copy::help() {
+    return "copy help";
 }

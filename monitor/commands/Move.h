@@ -16,6 +16,8 @@ private:
 
     std::string setOldFile(posArgs_t &poss);
     std::string setNewFile(posArgs_t &poss);
+protected:
+    std::string help() override;
 public:
     Move();
 

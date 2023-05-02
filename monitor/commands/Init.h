@@ -26,6 +26,8 @@ private:
     std::string setBlocks(const keyArgs_t &keys);
     std::string setSegments(const keyArgs_t &keys);
     std::string setLabel(posArgs_t &poss);
+protected:
+    std::string help() override;
 public:
     explicit Init();
 

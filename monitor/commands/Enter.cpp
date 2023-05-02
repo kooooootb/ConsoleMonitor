@@ -3,7 +3,7 @@
 #include "Enter.h"
 #include "utilFunctions.h"
 
-Enter::Enter() : BaseCommand(CommandsList::ENTER) {}
+Enter::Enter() = default;
 
 const std::string Enter::query = "enter";
 
@@ -62,4 +62,8 @@ std::string Enter::run() {
     stream << "enter command executed, length: \"" << length <<
             "\", filename: \"" << filename << "\"";
     return stream.str();
+}
+
+std::string Enter::help() {
+    return "enter help";
 }

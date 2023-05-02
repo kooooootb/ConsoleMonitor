@@ -3,7 +3,7 @@
 #include "Del.h"
 #include "utilFunctions.h"
 
-Del::Del() : BaseCommand(CommandsList::DEL) {}
+Del::Del() = default;
 
 const std::string Del::query = "del";
 
@@ -41,4 +41,8 @@ std::string Del::run() {
     std::stringstream stream;
     stream << "del command executed, file name: \"" << filename << "\"";
     return stream.str();
+}
+
+std::string Del::help() {
+    return "del help";
 }

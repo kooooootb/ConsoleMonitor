@@ -1,14 +1,8 @@
 #include "utilFunctions.h"
 #include "ParserException.h"
 #include "BaseCommand.h"
-#include "CommandHelp.h"
 
-BaseCommand::BaseCommand(CommandsList commandType_):
-commandType(commandType_) {}
-
-std::string BaseCommand::help() {
-    return CommandHelp::getMessage(commandType);
-}
+BaseCommand::BaseCommand() = default;
 
 std::string BaseCommand::processQuery(Parser &parser) {
     auto poss = parser.getBoolArgs();
@@ -24,8 +18,4 @@ std::string BaseCommand::processQuery(Parser &parser) {
     }
 
     return resultMessage;
-}
-
-CommandsList BaseCommand::getCommandType() const{
-    return commandType;
 }

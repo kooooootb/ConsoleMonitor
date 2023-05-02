@@ -3,7 +3,7 @@
 #include "Move.h"
 #include "utilFunctions.h"
 
-Move::Move() : BaseCommand(CommandsList::MOVE) {}
+Move::Move() = default;
 
 const std::string Move::query = "move";
 
@@ -54,4 +54,8 @@ std::string Move::run() {
     stream << "move command executed, old file: \"" << oldFile <<
             "\", new file: \"" << newFile << "\"";
     return stream.str();
+}
+
+std::string Move::help() {
+    return "move help";
 }

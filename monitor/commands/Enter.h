@@ -19,6 +19,8 @@ private:
 
     std::string setLength(const keyArgs_t &keys);
     std::string setFilename(posArgs_t &poss);
+protected:
+    std::string help() override;
 public:
     Enter();
 

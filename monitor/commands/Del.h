@@ -13,6 +13,8 @@ private:
     std::string checkAmount(const Parser &parser);
 
     std::string setFilename(posArgs_t &poss);
+protected:
+    std::string help() override;
 public:
     Del();
 

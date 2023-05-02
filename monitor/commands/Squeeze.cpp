@@ -2,7 +2,7 @@
 
 #include "Squeeze.h"
 
-Squeeze::Squeeze() : BaseCommand(CommandsList::SQUEZZE) {}
+Squeeze::Squeeze() = default;
 
 const std::string Squeeze::query = "squeeze";
 
@@ -15,4 +15,8 @@ std::string Squeeze::run() {
     std::stringstream stream;
     stream << "squeeze command executed";
     return stream.str();
+}
+
+std::string Squeeze::help() {
+    return "squeeze help";
 }

@@ -3,7 +3,7 @@
 #include "Init.h"
 #include "utilFunctions.h"
 
-Init::Init() : BaseCommand(CommandsList::INIT) {}
+Init::Init() = default;
 
 const std::string Init::query = "init";
 
@@ -79,4 +79,8 @@ std::string Init::run() {
     str << "init command executed, blocks: \"" << blocks <<
         "\", segments: \"" << segments << "\", label: \"" << label << "\"";
     return str.str();
+}
+
+std::string Init::help() {
+    return "init help\ninit help second line";
 }
