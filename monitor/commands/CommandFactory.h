@@ -16,21 +16,21 @@
 
 class CommandFactory {
 private:
-    template<std::size_t index = 0, typename T, class ...Args>
-    static typename std::enable_if<index == std::tuple_size_v<T>, std::shared_ptr<BaseCommand>>::type
+    template<std::size_t index = 0, typename Tuple, class ...Args>
+    static typename std::enable_if<index == std::tuple_size_v<Tuple>, std::shared_ptr<BaseCommand>>::type
     construct(const std::string &query, Args... args){
         return nullptr;
     }
 
-    template<std::size_t index = 0, typename T, class ...Args>
-    static typename std::enable_if<index < std::tuple_size_v<T>, std::shared_ptr<BaseCommand>>::type
+    template<std::size_t index = 0, typename Tuple, class ...Args>
+    static typename std::enable_if<index < std::tuple_size_v<Tuple>, std::shared_ptr<BaseCommand>>::type
     construct(const std::string &query, Args... args){
-        using CommandClass = std::tuple_element_t<index, T>;
+        using CommandClass = std::tuple_element_t<index, Tuple>;
         if(query == CommandClass::getQuery()){
             return std::make_shared<CommandClass>(args...);
         }
 
-        return construct<index + 1, T>(query, args...);
+        return construct<index + 1, Tuple>(query, args...);
     }
 
 public:
@@ -38,19 +38,17 @@ public:
     CommandFactory(const CommandFactory &) = delete;
     CommandFactory(CommandFactory &&) = delete;
 
-    using CommandClasses = std::tuple<Init, Full, Empty, Enter, Copy, Move, Del, Squeeze, Help>;
-
     /**
      * Фабричный метод создает объект команды из строки запроса
      * @param commandQuery строка запроса, целиком состоящая из символов команды
      * @param ostream поток вывода для создания объекта команды
      * @return указатель на объект команды
      */
-    template<class ...Args>
+    template<typename CommandClasses, class ...Args>
     static std::shared_ptr<BaseCommand> getCommand(const std::string &commandString, Args... args);
 };
 
-template<class ...Args>
+template<typename CommandClasses, class ...Args>
 std::shared_ptr<BaseCommand> CommandFactory::getCommand(const std::string &commandString, Args ...args) {
     return construct<0, CommandClasses>(commandString, args...);
 }

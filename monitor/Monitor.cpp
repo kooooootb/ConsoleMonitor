@@ -33,7 +33,7 @@ bool Monitor::processInput() {
             return false;
         } else { // do command thing
             // make command object
-            std::shared_ptr<BaseCommand> command = CommandFactory::getCommand(commandString);
+            std::shared_ptr<BaseCommand> command = CommandFactory::getCommand<std::tuple<Init, Full, Empty, Enter, Copy, Move, Del, Squeeze, Help>>(commandString);
 
             if (command == nullptr) { // if command doesn't exist
                 *outputer << "Command " + commandString + " doesn't exist" << "\n";
