@@ -21,8 +21,8 @@ int main() {
 #else //MONITOR_WITHFILE
     Monitor monitor(std::cin, std::cout, false);
 #endif //MONITOR_WITHFILE
-    
-    monitor.run();
+
+    monitor.run<std::tuple<Init, Full, Empty, Enter, Copy, Move, Del, Squeeze, Help>>();
 
     return 0;
 }

@@ -42,13 +42,56 @@ public:
      * Метод принимает запрос из входного потока и обрабатывает его
      * Для окончания ввода подходит команда EXIT или символ EOF
      * @return false если пользователь ввел команду окончания ввода, true otherwise
+     * @tparam Tuple Кортеж из классов команд, обрабатываемых монитором
      */
+    template<typename Tuple>
     bool processInput();
     /**
      * Метод сам управляет принятием ввода из консоли, выводит предложение на ввод
+     * @tparam Tuple Кортеж из классов команд, обрабатываемых монитором
      */
+    template<typename Tuple>
     void run();
 };
 
+template<typename Tuple>
+bool Monitor::processInput(){
+    std::string query = inputer->getline();
+
+    if(query.empty() && inputer->eof()){
+        return false;
+    } else{
+        std::shared_ptr<Parser> parser = getParser(query);
+        if(parser == nullptr) return true;
+
+        std::string &commandString = parser->getCommand();
+
+        if(commandString == "exit"){ // check if exiting
+            return false;
+        } else { // do command thing
+            // make command object
+            std::shared_ptr<BaseCommand> command = CommandFactory::getCommand<Tuple>(commandString);
+
+            if (command == nullptr) { // if command doesn't exist
+                *outputer << "Command " + commandString + " doesn't exist" << "\n";
+                printHelp();
+            } else { // run command
+                std::string message = command->processQuery(*parser);
+                *outputer << message << "\n";
+            }
+        }
+
+        return true;
+    }
+}
+
+template<typename Tuple>
+void Monitor::run(){
+    do{
+        showPrompt();
+    }while(processInput<Tuple>());
+
+    *outputer << MONITOR_EXIT_MESSAGE;
+}
 
 #endif //MONITOR_MONITOR_H
