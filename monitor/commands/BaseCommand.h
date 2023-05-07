@@ -8,7 +8,7 @@
 #include <memory>
 #include <algorithm>
 
-#include "Parser.h"
+#include "../utils/Parser.h"
 
 /**
  * Класс образует базу для дальнейших классов-команд, хранит общие методы обработки введенной строки
