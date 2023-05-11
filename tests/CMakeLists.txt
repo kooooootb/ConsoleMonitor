@@ -1,7 +1,5 @@
 project(monitorTests)
 
-cmake_policy(SET CMP0135 NEW)
-
 # fetch tests libs
 include(FetchContent)
 FetchContent_Declare(
