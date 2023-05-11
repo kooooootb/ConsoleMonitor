@@ -1,22 +1,13 @@
 #ifndef MONITOR_MYCOMMANDFACTORY_HPP
 #define MONITOR_MYCOMMANDFACTORY_HPP
 
-#include "CommandFactory.hpp"
-
 #include <utility>
 
-template<typename CommandClasses>
-class FSCommandFactory : public CommandFactory<CommandClasses> {
-private:
-    std::string s;
+#include <CommandFactory.hpp>
 
-public:
-    explicit FSCommandFactory(std::string string) : CommandFactory<CommandClasses>(), s(std::move(string)){ }
+#include "Init.h"
+#include "Help.h"
 
-    std::shared_ptr<BaseCommand> getCommand(const std::string &commandString) override {
-        return construct<0, CommandClasses>(commandString, s);
-    }
-};
-
+class MyCommandFactory : public CommandFactory<std::tuple<Init, Help>> {};
 
 #endif //MONITOR_MYCOMMANDFACTORY_HPP

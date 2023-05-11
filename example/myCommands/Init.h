@@ -8,10 +8,8 @@ private:
     int blocks = 0;
     int segments = 0;
     std::string label;
-    std::string s;
 
     static constexpr char DEFAULTLABEL[] = "DEFAULT";
-
     static constexpr char WRONGKEYSAMOUNT[] = "invalid key values amount";
     static constexpr char WRONGPOSSAMOUNT[] = "invalid positional values amount";
     static constexpr char BLOCKSCANTCONVERT[] = "blocks incorrect value";
@@ -30,7 +28,7 @@ private:
 protected:
     std::string help() override;
 public:
-    explicit Init(std::string &s) : label(), s(s){ }
+    Init() = default;
 
     static std::string getQuery();
 

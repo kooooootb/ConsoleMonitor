@@ -1,27 +1,22 @@
 #include <iostream>
 #include <fstream>
 
-#include "Monitor.h"
+#include <Monitor.h>
 
-//#define MONITOR_WITHFILE
+#include "MyCommandFactory.hpp"
 
-#include "mycommands/Init.h"
-#include "mycommands/Help.h"
-#include "mycommands/MyCommandFactory.hpp"
+#define MONITOR_WITHFILE // Флаг отвечает за ввод комманд из текстового файла
 
 int main() {
-    auto commandFactory = FSCommandFactory<std::tuple<
-        Init,
-        Help
-        >>("Test string");
+    MyCommandFactory commandFactory;
 
 #ifdef MONITOR_WITHFILE
-    std::ifstream istream("input.txt");
+    std::ifstream istream("exampleInput.txt");
     if(!istream.is_open()){
         throw std::runtime_error("can't find input file");
     }
 
-    std::ofstream ostream("output.txt");
+    std::ofstream ostream("exampleOutput.txt");
     if(!ostream.is_open()){
         throw std::runtime_error("can't find output file");
     }

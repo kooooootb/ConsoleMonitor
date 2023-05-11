@@ -1,9 +1,7 @@
 #include <sstream>
 
 #include "Init.h"
-#include "utils/utilFunctions.h"
-
-//Init::Init() = default;
+#include "utilFunctions.h"
 
 std::string Init::getQuery(){
     return "init";
@@ -30,6 +28,19 @@ std::string Init::checkAmount(const Parser &parser) {
     }
 
     return "";
+}
+
+template<class Num_t>
+bool convertToNumber(const std::string &strValue, Num_t& numberVar){
+    try {
+        numberVar = std::stoi(strValue);
+    } catch (std::out_of_range const &ex) {
+        return true;
+    } catch (std::invalid_argument const &ex) {
+        return true;
+    }
+
+    return false;
 }
 
 std::string Init::setBlocks(const keyArgs_t &keys) {
@@ -64,6 +75,12 @@ std::string Init::setSegments(const keyArgs_t &keys) {
     return "";
 }
 
+bool isASCII(const std::string &str){
+    return !std::any_of(std::begin(str), std::end(str), [](const char character) -> bool {
+        return character < 0;
+    });
+}
+
 std::string Init::setLabel(posArgs_t &poss) {
     label = poss.empty() ? DEFAULTLABEL : std::move(poss.back()); // label is optional
     poss.pop_back();
@@ -79,7 +96,7 @@ std::string Init::run() {
     // return fs_init(blocks, segments, label);
     std::stringstream str;
     str << "init command executed, blocks: \"" << blocks <<
-        "\", segments: \"" << segments << "\", label: \"" << label << "\", s: \"" << s << "\"";
+        "\", segments: \"" << segments << "\", label: \"" << label << "\"";
     return str.str();
 }
 

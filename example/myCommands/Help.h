@@ -9,10 +9,9 @@ class Help : public BaseCommand {
 private:
     static constexpr char helpMessage[] = "monitor help";
 protected:
-    std::string s;
     std::string help() override;
 public:
-    Help(std::string string): s(std::move(string)) {}
+    Help() = default;
 
     static std::string getQuery();
 
