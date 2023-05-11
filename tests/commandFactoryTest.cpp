@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 
-#include "CommandFactory.h"
+#include "CommandFactory.hpp"
 #include "Init.h"
 #include "Full.h"
 

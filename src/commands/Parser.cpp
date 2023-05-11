@@ -12,17 +12,17 @@ Parser::Parser(const std::string &query){
 
 void Parser::parseInput(const std::string &input){
     int index = 0;
-    while(index < input.size() && isWhitespace(input[index])){
+    while(index < input.size() && MonUt::isWhitespace(input[index])){
         index += 1;
     }
 
     int divideIndex = index;
-    while(divideIndex < input.size() && !isWhitespace(input[divideIndex])){
+    while(divideIndex < input.size() && !MonUt::isWhitespace(input[divideIndex])){
         divideIndex += 1;
     }
 
-    parseCommand(toLower(input.substr(index, divideIndex)));
-    parseArguments(toLower(input.substr(divideIndex, input.size())));
+    parseCommand(MonUt::toLower(input.substr(index, divideIndex)));
+    parseArguments(MonUt::toLower(input.substr(divideIndex, input.size())));
 }
 
 void Parser::parseCommand(std::string input){
@@ -35,7 +35,7 @@ void Parser::parseArguments(std::string input) {
     std::string key;
 
     while(index < input.size()) { // key values
-        if (isWhitespace(input[index])) {
+        if (MonUt::isWhitespace(input[index])) {
             index += 1;
         } else if (gotKey) {
             if (input[index] == '-') { // key is bool arg
@@ -64,7 +64,7 @@ std::string Parser::parseWord(const std::string &input, size_t &index){
     }
     size_t end = index;
 
-    while(end < input.size() && (!withQuotes && !isWhitespace(input[end]) || withQuotes && input[end] != '\"')){
+    while(end < input.size() && (!withQuotes && !MonUt::isWhitespace(input[end]) || withQuotes && input[end] != '\"')){
         end += 1;
     }
 
@@ -83,13 +83,13 @@ std::string Parser::parseWord(const std::string &input, size_t &index){
 keyArgs_t::key_type Parser::parseKey(const std::string &input, size_t &index){
     // we are at the first dash symbol
     index += 1;
-    if(index >= input.size() || isWhitespace(input[index])) throw ParserException("key syntax error (got standalone dash)");
+    if(index >= input.size() || MonUt::isWhitespace(input[index])) throw ParserException("key syntax error (got standalone dash)");
     if(input[index] == '-'){ // long key
         index += 1;
         return std::move(parseWord(input, index));
     } else{ // symbol key
         index += 1;
-        if(!isWhitespace(input[index])) throw ParserException("key syntax error (got single dash on long key)");
+        if(!MonUt::isWhitespace(input[index])) throw ParserException("key syntax error (got single dash on long key)");
         return { input[index-1] };
     }
 }

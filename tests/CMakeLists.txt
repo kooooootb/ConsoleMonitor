@@ -16,7 +16,7 @@ enable_testing()
 add_executable(monitorTests utilityTest.cpp parserTest.cpp commandFactoryTest.cpp)
 # link with gtest lib
 target_link_libraries(monitorTests GTest::gtest_main)
-# dunno
+# make gtests available and find tests sources
 include(GoogleTest)
 gtest_discover_tests(monitorTests)
 # include monitor things
