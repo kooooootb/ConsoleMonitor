@@ -1,11 +1,7 @@
-//
-// Created by evezers on 07/05/23.
-//
-
 #ifndef MONITOR_MYCOMMANDFACTORY_HPP
 #define MONITOR_MYCOMMANDFACTORY_HPP
 
-#include "CommandFactory.h"
+#include "CommandFactory.hpp"
 
 #include <utility>
 
@@ -18,7 +14,7 @@ public:
     explicit FSCommandFactory(std::string string) : CommandFactory<CommandClasses>(), s(std::move(string)){ }
 
     std::shared_ptr<BaseCommand> getCommand(const std::string &commandString) override {
-        return CommandFactory<CommandClasses>().template construct<0, CommandClasses>(commandString, s);
+        return construct<0, CommandClasses>(commandString, s);
     }
 };
 
