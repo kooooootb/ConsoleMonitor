@@ -2,7 +2,7 @@
 .idea/
 
 # Output files
-bin/
+**.exe
 
 # Personal notes
 todo.txt
