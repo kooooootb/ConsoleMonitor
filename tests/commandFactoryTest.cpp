@@ -1,13 +1,15 @@
 #include <gtest/gtest.h>
 
-#include "CommandFactory.hpp"
+#include "TestCommandFactory.hpp"
 #include "Init.h"
-#include "Full.h"
 
 namespace{
     TEST(parseCommand, inittype){
         std::ostream &ostream = std::cout;
         std::string query = "init";
-        EXPECT_EQ(CommandFactory::getCommand(query)->getCommandType(), CommandsList::INIT);
+        TestCommandFactory tcf;
+
+        // test by casting base pointer to derived by dynamic cast
+        EXPECT_NE(dynamic_cast<Init *>(tcf.getCommand(query).get()), nullptr);
     }
 }
