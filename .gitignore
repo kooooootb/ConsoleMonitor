@@ -1,6 +1,12 @@
 # Idea files
 .idea/
 
+# Output files
+bin/
+
+# Personal notes
+todo.txt
+
 # CMake
 cmake-build-*/
 
