@@ -2,7 +2,7 @@
 
 #include "Help.h"
 
-Help::Help() = default;
+//Help::Help() = default;
 
 std::string Help::getQuery(){
     return "help";

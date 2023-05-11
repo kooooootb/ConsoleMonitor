@@ -1,12 +1,11 @@
 project(commands)
 
 # make library
-SET(commands_list Init.cpp Full.cpp Empty.cpp Enter.cpp Copy.cpp Move.cpp Del.cpp Squeeze.cpp Help.cpp)
-add_library(commands STATIC BaseCommand.cpp ${commands_list})
+add_library(commands_base STATIC BaseCommand.cpp)
 
 # make utils visible in cpp
 include_directories("${Monitor_root}/utils")
 
 # make utils visible in cmake structure and compile it
 add_subdirectory("${Monitor_root}/utils" build)
-target_link_libraries(commands utils)
+target_link_libraries(commands_base utils)

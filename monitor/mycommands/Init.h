@@ -8,6 +8,7 @@ private:
     int blocks = 0;
     int segments = 0;
     std::string label;
+    std::string s;
 
     static constexpr char DEFAULTLABEL[] = "DEFAULT";
 
@@ -29,7 +30,7 @@ private:
 protected:
     std::string help() override;
 public:
-    explicit Init();
+    explicit Init(std::string &s) : label(), s(s){ }
 
     static std::string getQuery();
 

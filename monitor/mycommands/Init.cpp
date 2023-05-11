@@ -1,9 +1,9 @@
 #include <sstream>
 
 #include "Init.h"
-#include "utilFunctions.h"
+#include "utils/utilFunctions.h"
 
-Init::Init() = default;
+//Init::Init() = default;
 
 std::string Init::getQuery(){
     return "init";
@@ -79,7 +79,7 @@ std::string Init::run() {
     // return fs_init(blocks, segments, label);
     std::stringstream str;
     str << "init command executed, blocks: \"" << blocks <<
-        "\", segments: \"" << segments << "\", label: \"" << label << "\"";
+        "\", segments: \"" << segments << "\", label: \"" << label << "\", s: \"" << s << "\"";
     return str.str();
 }
 

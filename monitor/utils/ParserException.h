@@ -10,7 +10,7 @@ public:
     explicit ParserException(std::string message_) : message(std::move(message_)) {}
     explicit ParserException(const char *message_) : message(message_) {}
 
-    ~ParserException() override = default;;
+    ~ParserException() override = default;
 
     const char *what() const noexcept override { return message.c_str(); }
 };
