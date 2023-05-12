@@ -7,11 +7,13 @@
 
 class Help : public BaseCommand {
 private:
+    std::string inner;
+
     static constexpr char helpMessage[] = "monitor help";
 protected:
     std::string help() override;
 public:
-    Help() = default;
+    explicit Help(std::string string);
 
     static std::string getQuery();
 

@@ -3,6 +3,8 @@
 #include "Init.h"
 #include "utilFunctions.h"
 
+Init::Init(std::string string) : inner(string) {}
+
 std::string Init::getQuery(){
     return "init";
 }
@@ -96,7 +98,7 @@ std::string Init::run() {
     // return fs_init(blocks, segments, label);
     std::stringstream str;
     str << "init command executed, blocks: \"" << blocks <<
-        "\", segments: \"" << segments << "\", label: \"" << label << "\"";
+        "\", segments: \"" << segments << "\", label: \"" << label << "\"" << ", inner: " << inner;
     return str.str();
 }
 

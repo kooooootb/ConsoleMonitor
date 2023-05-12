@@ -2,6 +2,8 @@
 
 #include "Help.h"
 
+Help::Help(std::string string) : inner(string) {}
+
 std::string Help::getQuery(){
     return "help";
 }

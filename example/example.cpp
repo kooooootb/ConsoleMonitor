@@ -5,10 +5,10 @@
 
 #include "MyCommandFactory.hpp"
 
-#define MONITOR_WITHFILE // Флаг отвечает за ввод комманд из текстового файла
+#define MONITOR_WITHFILE // Флаг отвечает за ввод команд из текстового файла
 
 int main() {
-    MyCommandFactory commandFactory;
+    MyCommandFactory<std::tuple<Init, Help>> commandFactory("Example");
 
 #ifdef MONITOR_WITHFILE
     std::ifstream istream("exampleInput.txt");

@@ -9,6 +9,8 @@ private:
     int segments = 0;
     std::string label;
 
+    std::string inner;
+
     static constexpr char DEFAULTLABEL[] = "DEFAULT";
     static constexpr char WRONGKEYSAMOUNT[] = "invalid key values amount";
     static constexpr char WRONGPOSSAMOUNT[] = "invalid positional values amount";
@@ -28,7 +30,7 @@ private:
 protected:
     std::string help() override;
 public:
-    Init() = default;
+    explicit Init(std::string string);
 
     static std::string getQuery();
 
