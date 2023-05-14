@@ -65,7 +65,7 @@ public:
 
 template<typename CommandClasses>
 Monitor<CommandClasses>::Monitor(CommandFactory<CommandClasses> &commandFactory_, std::istream &istream_, std::ostream &ostream_, bool echoing_) :
-    inputer() , outputer() , commandFactory(commandFactory_)
+    outputer() , inputer() , commandFactory(commandFactory_)
 {
     // init input output objs
     if(echoing_){
