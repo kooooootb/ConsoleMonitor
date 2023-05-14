@@ -22,12 +22,16 @@ private:
     std::unique_ptr<MonitorOutput> outputer;
     std::unique_ptr<MonitorInput> inputer;
     CommandFactory<CommandClasses> &commandFactory;
-    static constexpr const char MONITOR_EXIT_MESSAGE[] = "Exit message";
+
+    /**
+     * Выводимое при выходе сообщение
+     */
+    std::string exitMessage = "Exit message";
 
     /**
      * Выводимое предложение ввода
      */
-    static constexpr char PROMPT[] = "-> ";
+    std::string prompt = "-> ";
 
     /**
      * Печатает сообщение помощи
@@ -44,6 +48,15 @@ private:
 
 public:
     Monitor(CommandFactory<CommandClasses> &commandFactory_, std::istream &istream_, std::ostream &ostream_, bool echoing_);
+
+    /**
+     * Переустанавливает выходное сообщение
+     */
+    void setExitMessage(std::string newMessage);
+    /**
+     * Переустанавливает приглашение на ввод
+     */
+    void setPrompt(std::string newPrompt);
 
     /**
      * Метод принимает запрос из входного потока и обрабатывает его
@@ -114,7 +127,7 @@ void Monitor<CommandClasses>::run() {
         showPrompt();
     }while(processInput());
 
-    *outputer << MONITOR_EXIT_MESSAGE;
+    *outputer << exitMessage;
 }
 
 template<typename CommandClasses>
@@ -135,7 +148,17 @@ void Monitor<CommandClasses>::printHelp() const {
 
 template<typename CommandClasses>
 void Monitor<CommandClasses>::showPrompt() const {
-    *outputer << PROMPT;
+    *outputer << prompt;
+}
+
+template<typename CommandClasses>
+void Monitor<CommandClasses>::setExitMessage(std::string newMessage) {
+    exitMessage = std::move(newMessage);
+}
+
+template<typename CommandClasses>
+void Monitor<CommandClasses>::setPrompt(std::string newPrompt) {
+    prompt = std::move(newPrompt);
 }
 
 #endif //MONITOR_MONITOR_H
