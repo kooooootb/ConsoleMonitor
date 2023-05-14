@@ -42,7 +42,7 @@ public:
      * @param parser объект парсера обработавший запрос
      * @return сообщение об ошибке (при ошибке)
      */
-    std::string processQuery(Parser &parser);
+    virtual std::string processQuery(Parser &parser);
 };
 
 #endif //MONITOR_BASECOMMAND_H
