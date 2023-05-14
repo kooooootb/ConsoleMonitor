@@ -4,7 +4,7 @@ project(Monitor)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED 1)
 
-cmake_policy(VERSION 3.24)
+cmake_policy(VERSION 3.22...3.24)
 
 add_subdirectory(tests)
 add_subdirectory(src)
