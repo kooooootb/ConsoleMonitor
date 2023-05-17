@@ -102,8 +102,10 @@ bool Monitor<CommandClasses>::processInput() {
 
         std::string &commandString = parser->getCommand();
 
-        if(commandString == "exit"){ // check if exiting
+        if(commandString == "exit") { // check if exiting
             return false;
+        } else if(commandString.empty()){
+            return true;
         } else { // do command thing
             // make command object
             std::shared_ptr<BaseCommand> command = commandFactory.getCommand(commandString);
