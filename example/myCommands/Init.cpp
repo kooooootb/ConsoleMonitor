@@ -85,7 +85,7 @@ bool isASCII(const std::string &str){
 
 std::string Init::setLabel(posArgs_t &poss) {
     label = poss.empty() ? DEFAULTLABEL : std::move(poss.back()); // label is optional
-    poss.pop_back();
+    if(!poss.empty()) poss.pop_back();
 
     if(label.size() > 10 || !isASCII(label)){
         return LABELINCORRECT;
