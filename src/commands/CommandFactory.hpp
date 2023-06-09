@@ -8,7 +8,7 @@ class CommandFactory {
 protected:
     template<std::size_t index, class ...Args>
     static typename std::enable_if<index == std::tuple_size_v<CommandClasses>, std::shared_ptr<BaseCommand>>::type
-    construct(const std::string &query, [[maybe_unused]] Args... args){
+    construct(const std::string &query, [[maybe_unused]] Args && ...args){
         (void) query; // unused
         return nullptr;
     }
@@ -24,13 +24,13 @@ protected:
      */
     template<std::size_t index = 0, class ...Args>
     static typename std::enable_if<index < std::tuple_size_v<CommandClasses>, std::shared_ptr<BaseCommand>>::type
-    construct(const std::string &query, Args... args){
+    construct(const std::string &query, Args && ...args){
         using CommandClass = std::tuple_element_t<index, CommandClasses>;
         if(query == CommandClass::getQuery()){
-            return std::make_shared<CommandClass>(args...);
+            return std::make_shared<CommandClass>(std::forward<Args>(args)...);
         }
 
-        return construct<index + 1>(query, args...);
+        return construct<index + 1>(query, std::forward<Args>(args)...);
     }
 
 public:
